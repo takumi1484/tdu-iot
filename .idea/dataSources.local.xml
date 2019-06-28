@@ -11,5 +11,15 @@
       <user-name>b56f5468444d3d</user-name>
       <introspection-schemas>*:@</introspection-schemas>
     </data-source>
+    <data-source name="tdu-iot@localhost" uuid="7e75d0ba-a26a-43a6-99f4-beebdf106c55">
+      <database-info product="MariaDB" version="10.1.29-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MARIADB" exact-version="10.1.29" exact-driver-version="2.4">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
   </component>
 </project>
