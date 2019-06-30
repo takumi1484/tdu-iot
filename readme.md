@@ -6,7 +6,7 @@ app/Modelを作成
 yarn add cross-env --dev
 ※よくわかってない
 
-#js,cssの読み込み
+# js,cssの読み込み
 1. /public/jsと/public/cssにjs,cssファイルを置く
 2. viewのbladeファイル(resources/views/layouts/app.blade.php)のヘッダに`<script src="{{ asset('js/test.js') }}" defer></script>`と`<link href="{{ asset('css/style.css') }}" rel="stylesheet">`を追加
 3. これで読み込むはず...
