@@ -18,3 +18,15 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+
+
+
+Route::group(['prefix' => 'device'], function () {//区分
+    Route::post('/add','HomeController@addDevice');
+    Route::delete('/{id}', 'HomeController@deleteDevice');
+});
+Route::group(['prefix' => 'button'], function () {//区分
+    Route::post('/add','HomeController@addButton');
+    Route::post('/edit/{id}','HomeController@editButton');
+    Route::delete('/{id}', 'HomeController@deleteButton');
+});
