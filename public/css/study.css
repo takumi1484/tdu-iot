@@ -1,0 +1,20 @@
+
+.inp{
+    text-align: center;
+    font-size: 80%;
+    
+}
+.button_name{
+    border: solid 1px #000; 
+}
+.kubun_name{
+    border: solid 1px #000; 
+}
+.message{
+    text-align:left;
+    width: 200px;
+    padding:10px;
+    margin: auto;
+    border: 1px solid #AAA;
+    border-radius: 10%;
+}
