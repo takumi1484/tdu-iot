@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 <link href="{{ asset('css/Register.css') }}" rel="stylesheet">
+
 <script href="{{ asset('js/Register.js') }}" type="text/javascript"></script>
 @section('content')
 <div class="container">
