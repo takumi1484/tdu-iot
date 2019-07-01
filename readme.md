@@ -1,8 +1,3 @@
-app/Modelを作成
-->モデルファイルをまとめる用、名前空間に注意
-　 例: namespace App\Model;
-※Userを除く
-
 yarn add cross-env --dev
 ※よくわかってない
 
@@ -14,3 +9,15 @@ yarn add cross-env --dev
 ※{{assert()}}はpublicを開く
 
 複雑なコードを書く場合はlaravelMixを使ってsassやjsをコンパイルするのが本来の方法っぽい
+
+
+<form method="POST" action="XXX">
+XXX
+    {{action('AdminController@deleteShop', ['id' => $shop->id])}}
+    {{ url('admin/shops/add') }}
+    {{ route('register') }}
+なんかどれも似たような動きする
+
+現状は全件表示になっているのでユーザーごとのボタンのみを表示するようにする
+
+home.bladeでhiddenFormを利用

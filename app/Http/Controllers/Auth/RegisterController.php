@@ -48,11 +48,15 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $error_messages = [
+            "name.unique"=>"その名前は既に使われています。ほかの名前を入力してください",
+        ];
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'name' => ['required', 'string', 'max:255','unique:users'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+        ],$error_messages);
     }
 
     /**
