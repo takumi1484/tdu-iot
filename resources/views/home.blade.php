@@ -58,4 +58,5 @@
             <input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>
         </form>
     <br>
+    
 @endsection
