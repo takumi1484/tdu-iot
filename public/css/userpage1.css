@@ -78,6 +78,7 @@
 }
 
 .btn1 {
+    float:left;
   width:70%;
   height:40px;
   background:#fff;
@@ -91,19 +92,22 @@
   border-style: solid;
 }
 .btn3 {
-  font-size:10px;
-  color:#AAA;
-  float:left;
-  background:#fff;
-  border: 1px solid #AAA;
-  padding:5px;
-  margin-top:5px;
-  margin-left:5%;
-  border-radius: 50%;
+    width: 20px;
+    height:auto;
+}
+.trash_btn{
+    background: #ffffff;
+    border:none #ffffff;
+    float:left;
+    padding:5px;
+    margin-left: 5%;
 }
 .btn4 {
+    width:70%;
+    float:right;
   background:#fff;
-  border-style: solid;
+  border: 1px solid;
+    padding:5px;
   background:#EEE;
 }
 .btn5 {

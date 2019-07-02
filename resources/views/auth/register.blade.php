@@ -48,7 +48,7 @@
                             </div>--}}
 
                             <a>パスワード</a>
-                            <input id="password" type="password" class="textlines @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="パスワードを入力してください。">
+                            <input id="password" type="password" class="textlines @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" minlength="8" placeholder="パスワードを入力してください。">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
