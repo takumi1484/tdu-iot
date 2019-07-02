@@ -12,6 +12,10 @@
 
     <br>
     <div class="add-control">
+        @if (Session::has('status'))
+            <h3>{{ session('status') }}</h3>
+        @endif
+
         <input class="btn3" type="button" value=" × ">
         <input type="checkbox" class="chk" id="open-close" name="btn0" />
         <label class="btn0 btn0-open-close" for="open-close">
@@ -34,13 +38,27 @@
     <div class="box0">
         @foreach($devices as $device)
             {{$device->name}}
+        <ul>
             @foreach($device->button as $button)
-
+                <li>
+                    {{$button->name}}:
+                    <form method="POST" action="{{action('HomeController@deleteButton', ['id' => $button->id])}}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn btn-primary">ボタンの削除</button>
+                    </form>
+{{--                    <form method="POST" action="{{action('HomeController@deditDevice', ['id' => $device->id])}}">--}}
+{{--                        @csrf--}}
+{{--                        @method('delete')--}}
+{{--                        <button type="submit" class="btn btn-primary">ボタンの編集</button>--}}
+{{--                    </form>--}}
+                </li>
             @endforeach
+        </ul>
             <form method="POST" action="{{action('HomeController@deleteDevice', ['id' => $device->id])}}">
                 @csrf
                 @method('delete')
-                <button type="submit" class="btn btn-primary">ボタンの削除</button>
+                <button type="submit" class="btn btn-primary">区分の削除</button>
             </form>
             <form method="POST" action="{{ action('HomeController@addButton')}}">
                 @csrf
