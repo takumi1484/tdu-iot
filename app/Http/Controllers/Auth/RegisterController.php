@@ -50,12 +50,13 @@ class RegisterController extends Controller
     {
         $error_messages = [
             "name.unique"=>"その名前は既に使われています。ほかの名前を入力してください",
+            "password.min:6"=>"パスワードは6文字以上にしてください"
         ];
 
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255','unique:users'],
             //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
         ],$error_messages);
     }
 

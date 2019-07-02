@@ -30,7 +30,9 @@ class HomeController extends Controller
     {
         return view('home')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
-            'buttons'=>Button::all()
+            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'status'=>null
+            //不安
         ]);
     }
 
@@ -44,6 +46,7 @@ class HomeController extends Controller
 
     public function deleteDevice($id){
         Device::destroy($id);
+        Button::where('device_id',$id)->delete();
         return redirect('/')->with('status', '区分を削除しました');
     }
     public function addButton(Request $request){
