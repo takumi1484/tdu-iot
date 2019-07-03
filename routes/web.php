@@ -30,3 +30,5 @@ Route::group(['prefix' => 'button'], function () {//区分
     Route::post('/edit/{id}','HomeController@editButton');
     Route::delete('/{id}', 'HomeController@deleteButton');
 });
+
+Route::get('test','HomeController@test');

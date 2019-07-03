@@ -1,46 +1,51 @@
 
-.btn0 {
-    color: #000;
-    border: 1px solid #777;
-    margin-bottom: .3em;
-    text-align: left;
-    display: table; 
-    width:60%;
-    margin-left: 20%;
-    padding:5px 5px 5px 10px;
-}
-.btn0:hover {
-    cursor: pointer;    
-}
-.btn0:active {
-    background: rgb(127, 194, 239);
-}
-.box0 {
-    text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
-}
+/*.btn0 {*/
+/*    color: #000;*/
+/*    border: 1px solid #777;*/
+/*    margin-bottom: .3em;*/
+/*    text-align: left;*/
+/*    display: table;*/
+/*    width:60%;*/
+/*    margin-left: 20%;*/
+/*    padding:5px 5px 5px 10px;*/
+/*}*/
+/*.btn0:hover {*/
+/*    cursor: pointer;*/
+/*}*/
+/*.btn0:active {*/
+/*    background: rgb(127, 194, 239);*/
+/*}*/
+/*.box0 {*/
+/*    text-align: center;*/
+/*    margin-left: 25%;*/
+/*    margin-right: 25%;*/
+/*}*/
 
-/* checkbox non-display */
-.add-control .chk{
+/*!* checkbox non-display *!*/
+/*.add-control .chk{*/
+/*    display: none;*/
+/*}*/
+/*!* button control *!*/
+/*.add-control #open-close ~ .btn0-open-close::before {*/
+/*    content: "▽ " ;*/
+/*    border-right:solid 1px #777;*/
+/*    padding:5px;*/
+/*}*/
+/*.add-control #open-close ~ .box0 {*/
+/*    display: none ;*/
+/*}*/
+/*.add-control #open-close:checked ~ .btn0-open-close::before {*/
+/*    content: "△ " ;*/
+/*}*/
+/*.add-control #open-close:checked ~ .box0 {*/
+/*    display: block ;*/
+/*    padding:5px;*/
+/*}*/
+
+.hidden_box{
     display: none;
 }
-/* button control */
-.add-control #open-close ~ .btn0-open-close::before {
-    content: "▽ " ;
-    border-right:solid 1px #777;
-    padding:5px;
-}
-.add-control #open-close ~ .box0 {
-    display: none ;
-}
-.add-control #open-close:checked ~ .btn0-open-close::before {
-    content: "△ " ;
-}
-.add-control #open-close:checked ~ .box0 {
-    display: block ;
-    padding:5px;
-}
+
 
 /********************************************
 * Now Loading

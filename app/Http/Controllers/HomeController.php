@@ -70,4 +70,7 @@ class HomeController extends Controller
         Button::destroy($id);
         return redirect('/')->with('status', 'ボタンを削除しました');
     }
+    public function test(){
+        return "aaaaaaaaaaaaaaaaaaaaaaa";
+    }
 }
