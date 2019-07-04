@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DemeterChain\B;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -69,8 +68,5 @@ class HomeController extends Controller
     public function deleteButton($id){
         Button::destroy($id);
         return redirect('/')->with('status', 'ボタンを削除しました');
-    }
-    public function test(){
-        return "aaaaaaaaaaaaaaaaaaaaaaa";
     }
 }
