@@ -41,7 +41,7 @@
                         <br>
                     </div>
                 @endforeach
-                    <a href="{{url('study/'.$device->id)}}">test</a>
+                    <a href="{{url('study/'.$device->id)}}>test</a>
             </div>
         @endforeach
     </dl>
