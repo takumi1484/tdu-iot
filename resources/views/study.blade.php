@@ -17,7 +17,9 @@
                 注)エアコンは温度、風量等データを一括で送信しているため、温度上下のみ等の利用はできません。
             </p>
             <br><br>
-            <input type="submit" value="学習開始" class="button_name">
+            <div align="center">
+                <input type="submit" value="学習開始" class="btn_name">
+            </div>
         </div>
     </form>
 @endsection

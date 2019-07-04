@@ -41,7 +41,10 @@
                         <br>
                     </div>
                 @endforeach
-                    <a href="{{url('study/'.$device->id)}}">test</a>
+                    <div class="add_btn">
+                        <a href="{{url('study/'.$device->id)}}">ボタンを追加</a>
+                    </div>
+                </dd>
             </div>
         @endforeach
     </dl>
