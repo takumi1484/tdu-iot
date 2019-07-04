@@ -9,3 +9,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+.idea/dataSources/7e75d0ba-a26a-43a6-99f4-beebdf106c55.corrupted.20190703-074642.xml
+.idea/dataSources/7e75d0ba-a26a-43a6-99f4-beebdf106c55.corrupted.20190703-074642.reason.txt
+.idea/dataSources/3ad25c05-7d93-4df5-b6b5-552ed5759f7c.corrupted.20190703-074641.xml
+.idea/dataSources/3ad25c05-7d93-4df5-b6b5-552ed5759f7c.corrupted.20190703-074641.reason.txt
+.gitignore
