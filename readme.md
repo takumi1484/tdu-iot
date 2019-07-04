@@ -23,3 +23,6 @@ XXX
 home.bladeでhiddenFormを利用
 
 区分を消したら底に属するボタンをすべて消す
+
+#getルート
+/api/get?user=X&device=X&button=X

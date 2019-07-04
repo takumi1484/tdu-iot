@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DemeterChain\B;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
