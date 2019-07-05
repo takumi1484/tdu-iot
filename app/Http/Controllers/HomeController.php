@@ -40,7 +40,6 @@ class HomeController extends Controller
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
             'status'=>null,
             'device_id'=>$id
-            //不安
         ]);
     }
     public function edit($id){
@@ -51,7 +50,6 @@ class HomeController extends Controller
             'button_id'=>$id
         ]);
     }
-
     public function addDevice(Request $request){
         $devices=new Device;
         $devices->name=$request->device_name;

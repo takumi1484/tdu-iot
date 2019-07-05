@@ -1,8 +1,8 @@
 .button_edit{
   text-align: center;
 }
-.new_botton_name{
-  border: 1px solid black;
+.new_button_name{
+  border: solid 1px #000;
 }
 .button{
   border: 0.1px solid black;
