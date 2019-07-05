@@ -4,9 +4,9 @@
 <script type="text/javascript" src="{{ asset('js/userpage1.js') }}" defer></script>
 @section('content')
     <form method="POST" action="{{ action('HomeController@addButton')}}">
+        @csrf
         <div class="inp">
             <br><br><p>ボタン名を入力してください</p>
-            @csrf
             <input class="btn_name" type="text" name="button_name" placeholder="ボタン名"required maxlength="8" size="30vw" rows="1">
             <input type="hidden" name="device_id" value="{{$device_id}}">
             <br>
