@@ -34,7 +34,7 @@ class HomeController extends Controller
             //不安
         ]);
     }
-<<<<<<< HEAD
+
     public function study($id){
         return view('study')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
@@ -52,8 +52,7 @@ class HomeController extends Controller
             'button_id'=>$id
         ]);
     }
-=======
->>>>>>> master
+
 
     public function addDevice(Request $request){
         $devices=new Device;
