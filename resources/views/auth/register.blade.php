@@ -47,7 +47,7 @@
                                 </div>
                             </div>--}}
 
-                            <a>パスワード(8文字以上)</a>
+                            <a>パスワード</a>
                             <input id="password" type="password" class="textlines @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" minlength="8" placeholder="パスワードを入力してください。">
                             @error('password')
                             <span class="invalid-feedback" role="alert">
