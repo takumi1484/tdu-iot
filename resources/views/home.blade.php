@@ -57,7 +57,6 @@
                     </div>
                 </div>
                 </dd>
->>>>>>> master
             </div>
         @endforeach
     </dl>
