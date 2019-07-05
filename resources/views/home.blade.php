@@ -37,10 +37,27 @@
                         <br>
                     </div>
                 @endforeach
+<<<<<<< HEAD
                     <div align="center">
                         <input type="button" class="add_btn" onclick="location.href='{{url('study/'.$device->id)}}'" value="ボタンを追加">
                     </div>
                 </div>
+=======
+                <br>
+                <div class="box0">
+                    <div class="name">
+                        <!--<input class="btn4" type="button" value="＋  ボタンを作成" onclick="location.href='./study.html'">-->
+                        <form method="POST" action="{{ action('HomeController@addButton')}}">
+                            @csrf
+                            <input type="text" class="btn4" name="button_name" placeholder="ボタンを作成" maxlength="8" required>
+                            <input type="hidden" name="device_id" value="{{$device->id}}">
+                            <button type="submit" class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+                </dd>
+>>>>>>> master
             </div>
         @endforeach
     </dl>
