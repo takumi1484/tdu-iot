@@ -26,3 +26,6 @@ home.bladeでhiddenFormを利用
 
 #getルート
 /api/get?user=X&device=X&button=X
+
+#ボタン追加連打するとたくさん追加される
+->一回追加を押したらjsで無効化する

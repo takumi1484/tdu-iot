@@ -34,6 +34,26 @@ class HomeController extends Controller
             //不安
         ]);
     }
+<<<<<<< HEAD
+    public function study($id){
+        return view('study')->with([
+            'devices'=>Device::where('user_id',Auth::id())->get(),
+            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'status'=>null,
+            'device_id'=>$id
+            //不安
+        ]);
+    }
+    public function edit($id){
+        return view('editbtn')->with([
+            'devices'=>Device::where('user_id',Auth::id())->get(),
+            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'status'=>null,
+            'button_id'=>$id
+        ]);
+    }
+=======
+>>>>>>> master
 
     public function addDevice(Request $request){
         $devices=new Device;

@@ -26,21 +26,23 @@
                         </label>
                     </div>
                 </dt>
-                <dd class="hidden_box" id="target_{{$device->id}}">
+                <div class="hidden_box" id="target_{{$device->id}}">
                 @foreach($device->button as $button)
                     <div class="box0">
                         <div class="name">
                             <input class="btn1" type="button" value={{$button->name}}>
-                            <form method="POST" action="{{action('HomeController@deleteButton', ['id' => $button->id])}}">
-                            @csrf
-                            @method('delete')
-                            <!--<input class="btn2" type="button" value="編集">-->
-                                <button type="submit" class="btn2">削除</button>
-                            </form>
+                                <button type="submit" class="btn2" onclick="location.href='{{url('edit/'.$button->id)}}'">編集</button>
+{{--                                <button type="submit" class="btn2">削除</button>--}}
                         </div>
                         <br>
                     </div>
                 @endforeach
+<<<<<<< HEAD
+                    <div align="center">
+                        <input type="button" class="add_btn" onclick="location.href='{{url('study/'.$device->id)}}'" value="ボタンを追加">
+                    </div>
+                </div>
+=======
                 <br>
                 <div class="box0">
                     <div class="name">
@@ -55,13 +57,14 @@
                     </div>
                 </div>
                 </dd>
+>>>>>>> master
             </div>
         @endforeach
     </dl>
     <br>
         <form method="POST" action="{{ action('HomeController@addDevice')}}">
             @csrf
-            <button type="submit"class="trash_btn"><img src="{{ asset('img/add_box.png') }}" class="btn3"></button>
+            <button type="submit"class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
             <input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>
         </form>
     <br>
