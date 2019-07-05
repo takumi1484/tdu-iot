@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use DemeterChain\B;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -32,6 +31,15 @@ class HomeController extends Controller
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
             'status'=>null
+            //不安
+        ]);
+    }
+    public function study($id){
+        return view('study')->with([
+            'devices'=>Device::where('user_id',Auth::id())->get(),
+            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'status'=>null,
+            'device_id'=>$id
             //不安
         ]);
     }

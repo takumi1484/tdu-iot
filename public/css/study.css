@@ -5,7 +5,7 @@
     
 }
 .button_name{
-    border: solid 1px #000; 
+    border: solid 1px #000;
 }
 .kubun_name{
     border: solid 1px #000; 
@@ -17,4 +17,7 @@
     margin: auto;
     border: 1px solid #AAA;
     border-radius: 10%;
+}
+.btn_name{
+    border:solid 1px #000;
 }

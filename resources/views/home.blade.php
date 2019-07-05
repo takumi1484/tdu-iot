@@ -9,54 +9,65 @@
             <span class="spinner"></span>
         </div>
     </div>
-    @foreach($devices as $device)
-
-    <br>
-    <div class="add-control">
-        <form method="POST" action="{{action('HomeController@deleteDevice', ['id' => $device->id])}}">
-            @csrf
-            @method('delete')
-            <button type="submit"class="trash_btn"><img src="{{ asset('img/trash_box.png') }}" class="btn3"></button>
-        </form>
-        <input type="checkbox" class="chk" id="open-close" name="btn0" />
-        <label class="btn0 btn0-open-close" for="open-close">
-            &nbsp&nbsp{{$device->name}}
-        </label>
-        @foreach($device->button as $button)
-        <div class="box0">
-            <div class="name">
-                <input class="btn1" type="button" value={{$button->name}}>
-                <form method="POST" action="{{action('HomeController@deleteButton', ['id' => $button->id])}}">
-                    @csrf
-                    @method('delete')
-                        <!--<input class="btn2" type="button" value="編集">-->
-                        <button type="submit" class="btn2">削除</button>
-                </form>
-            </div>
+    <dl>
+        @foreach($devices as $device)
             <br>
-        </div>
-        @endforeach
-        <br>
-        <div class="box0">
-            <div class="name">
-                <!--<input class="btn4" type="button" value="＋  ボタンを作成" onclick="location.href='./study.html'">-->
-                <form method="POST" action="{{ action('HomeController@addButton')}}">
-                    @csrf
-                    <input type="text" class="btn4" name="button_name" placeholder="ボタンを作成" maxlength="8" required>
-                    <input type="hidden" name="device_id" value="{{$device->id}}">
-                    <button type="submit"class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
-                </form>
-                <br>
+            <div>
+                <dt class="add-control" >
+                    <form method="POST" action="{{action('HomeController@deleteDevice', ['id' => $device->id])}}">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="trash_btn"><img src="{{ asset('img/trash_box.png') }}" class="btn3"></button>
+                    </form>
+                    <div class="toggle-case" data-target="target_{{$device->id}}">
+{{--                        <input type="checkbox" class="chk" id="open-close" name="btn0" />--}}
+                        <label class="btn0 btn0-open-close" for="open-close">
+                            <span class="chk-hidden">&nbsp&nbsp{{$device->name}}</span>
+                        </label>
+                    </div>
+                </dt>
+                <div class="hidden_box" id="target_{{$device->id}}">
+                @foreach($device->button as $button)
+                    <div class="box0">
+                        <div class="name">
+                            <input class="btn1" type="button" value={{$button->name}}>
+                            <form method="POST" action="{{action('HomeController@deleteButton', ['id' => $button->id])}}">
+                            @csrf
+                            @method('delete')
+                            <!--<input class="btn2" type="button" value="編集">-->
+                                <button type="submit" class="btn2">削除</button>
+                            </form>
+                        </div>
+                        <br>
+                    </div>
+                @endforeach
+                    <div align="center">
+                        <input type="button" class="add_btn" onClick="location.href='{{url('study/'.$device->id)}}'" value="ボタンを追加">
+                    </div>
+                </div>
             </div>
-        </div>
         @endforeach
-    </div>
+    </dl>
     <br>
         <form method="POST" action="{{ action('HomeController@addDevice')}}">
             @csrf
-            <button type="submit"class="trash_btn"><img src="{{ asset('img/add_box.png') }}" class="btn3"></button>
+            <button type="submit"class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
             <input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>
         </form>
     <br>
-    
+    <script>
+        $(function(){
+            $( '.toggle-case' ).click( function(){
+                // [data-target]の属性値を代入する
+                var targetBox = $( this ).data( 'target' );
+                // [target]と同じ名前のIDを持つ要素に[slideToggle()]を実行する
+                $( '#' + targetBox ).slideToggle();
+                $(this).find('span').toggleClass('chk-shown');
+                return false ;
+            });
+        });
+
+
+        //コンパイルを通さない素のjsなのでvue warnが出る
+    </script>
 @endsection
