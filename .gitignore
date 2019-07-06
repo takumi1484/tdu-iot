@@ -18,3 +18,5 @@ yarn-error.log
 =======
 /.idea
 >>>>>>> 0ea138910afdf963b85e6e7b580a2aa28babd6a5
+.idea/**/workspace.xml
+.idea/**/tasks.xml
