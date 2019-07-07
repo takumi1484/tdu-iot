@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Button;
+use Crypt;
 
 class HomeController extends Controller
 {
@@ -43,6 +44,7 @@ class HomeController extends Controller
         ]);
     }
     public function edit($id){
+        $id = Crypt::decrypt($id);
         return view('editbtn')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
@@ -75,7 +77,6 @@ class HomeController extends Controller
     public function editButton(Request $request,$id){
         Button::where('id',$id)->update([
             'name'=>$request->button_name,
-            'ir_code'=>'編集後のIRコード'
             ]);
         return redirect('/')->with('status', 'ボタンを編集しました');
     }
