@@ -73,8 +73,8 @@ class HomeController extends Controller
     }
 
     public function editButton(Request $request,$id){
-        Button::where('id',$id)->get()->update([
-            'name'=>'編集後の名前',
+        Button::where('id',$id)->update([
+            'name'=>$request->button_name,
             'ir_code'=>'編集後のIRコード'
             ]);
         return redirect('/')->with('status', 'ボタンを編集しました');
