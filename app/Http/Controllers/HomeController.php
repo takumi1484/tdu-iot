@@ -57,6 +57,7 @@ class HomeController extends Controller
             ]);
         }return redirect('/');
     }
+
     public function addDevice(Request $request){
         $devices=new Device;
         $devices->name=$request->device_name;
