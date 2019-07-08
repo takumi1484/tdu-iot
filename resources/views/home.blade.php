@@ -31,7 +31,7 @@
                     <div class="box0">
                         <div class="name">
                             <input class="btn1" type="button" value={{$button->name}}>
-                                <button type="submit" class="btn2" onclick="location.href='{{url('edit/'.encrypt($button->id))}}'">編集</button>
+                                <button type="submit" class="btn2" onclick="location.href='{{url('edit/'.$button->id)}}'">編集</button>
 {{--                                <button type="submit" class="btn2">削除</button>--}}
                         </div>
                         <br>
