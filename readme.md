@@ -30,16 +30,20 @@ home.bladeでhiddenFormを利用
 #ボタン追加連打するとたくさん追加される
 ->一回追加を押したらjsで無効化する
 
-
+#middleware設定
 url欄からbutton_id,user_idを直接指定した場合に、ログイン中のユーザーの所有するボタン、区分かどうかを確認するmiddlewareを追加
 現状、存在しないidを指定すると`Trying to get property 'device' of non-object`というエラーがlaravelから出るため例外処理を考える必要あり
 
 ```$xslt
-Route::get('/study/{id}','HomeController@study')->middleware('check.button');
+Route::get('/aaaa/{id}','HomeController@study')->middleware('check.button');//CheckButton
+Route::get('/aaaa/{id}','HomeController@study')->middleware('check.device');//CheckDevice
 ```   
-というように指定すると`/study/{id}`にアクセスする際、button_idからそのbuttonがログイン中のユーザーの物かを調べる
+というように指定すると`/aaa/{id}`にアクセスする際、button_idもしくはdevice_idからそのbutton,deviceがログイン中のユーザーの物かを調べる
+button/edit/1はidが1のボタンを作成したユーザーしか開けない
 
 ※Karnel.phpにてmiddlewareを指定
+
+
 
 
 
