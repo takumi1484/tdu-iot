@@ -34,12 +34,12 @@ class HomeController extends Controller
             //不安
         ]);
     }
-    public function study($id){
+    public function study($id){//
         return view('study')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
-            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'buttons'=>Button::where('device_id',$id),
             'status'=>null,
-            'device_id'=>$id
+//            'device_id'=>$id
             //不安
         ]);
     }
@@ -86,4 +86,10 @@ class HomeController extends Controller
         Button::destroy($id);
         return redirect('/')->with('status', 'ボタンを削除しました');
     }
+
+//    public function test(Request $request){
+//        return view('study')->with([
+//           'message'=>$request
+//        ]);
+//    }
 }

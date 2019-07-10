@@ -31,14 +31,14 @@
                     <div class="box0">
                         <div class="name">
                             <input class="btn1" type="button" value={{$button->name}}>
-                                <button type="submit" class="btn2" onclick="location.href='{{url('edit/'.$button->id)}}'">編集</button>
+                                <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>
 {{--                                <button type="submit" class="btn2">削除</button>--}}
                         </div>
                         <br>
                     </div>
                 @endforeach
                     <div align="center">
-                        <input type="button" class="add_btn" onclick="location.href='{{url('study/'.$device->id)}}'" value="ボタンを追加">
+                        <input type="button" class="add_btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
                     </div>
                 </div>
             </div>
