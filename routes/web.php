@@ -27,9 +27,12 @@ Route::group(['prefix' => 'device'], function () {//区分
 });
 Route::group(['prefix' => 'button'], function () {//区分
     Route::post('/add','HomeController@addButton');
-    Route::get('/edit/{id}','HomeController@editButton');
-    Route::delete('/{id}', 'HomeController@deleteButton');
+    Route::get('/{id}','EditButtonController@index');
+    Route::post('/{id}','EditButtonController@editButton');
+    Route::delete('/{id}', 'EditButtonController@deleteButton');
     Route::get('/study/{id}','HomeController@study');
+
 //    Route::get('/study/{id}','HomeController@study')->middleware('check.button');
+
 });
 

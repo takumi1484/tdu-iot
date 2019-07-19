@@ -31,9 +31,9 @@
                     <div class="box0">
                         <div class="name">
                             <input class="btn1" type="button" value={{$button->name}}>
-                                <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>
 {{--                                <button type="submit" class="btn2">削除</button>--}}
                         </div>
+                        <button type="submit" class="btn2" onclick="location.href='{{url('button/'.$button->id)}}'">編集</button>
                         <br>
                     </div>
                 @endforeach

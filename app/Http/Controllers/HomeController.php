@@ -74,18 +74,18 @@ class HomeController extends Controller
         return redirect('/')->with('status', 'ボタンを追加しました');
     }
 
-    public function editButton(Request $request,$id){
-        Button::where('id',$id)->get()->update([
-            'name'=>'編集後の名前',
-            'ir_code'=>'編集後のIRコード'
-            ]);
-        return redirect('/')->with('status', 'ボタンを編集しました');
-    }
+//    public function editButton(Request $request,$id){
+//        Button::where('id',$id)->get()->update([
+//            'name'=>'編集後の名前',
+//            'ir_code'=>'編集後のIRコード'
+//            ]);
+//        return redirect('/')->with('status', 'ボタンを編集しました');
+//    }
 
-    public function deleteButton($id){
-        Button::destroy($id);
-        return redirect('/')->with('status', 'ボタンを削除しました');
-    }
+//    public function deleteButton($id){
+//        Button::destroy($id);
+//        return redirect('/')->with('status', 'ボタンを削除しました');
+//    }
 
 //    public function test(Request $request){
 //        return view('study')->with([

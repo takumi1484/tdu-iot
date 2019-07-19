@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class apiController extends Controller
 {
     public function get($user_name){
-        return User::where('name',$user_name)->first()->current_ir;
+        $ir=User::where('name',$user_name)->first()->current_ir;
+        return $ir;
     }
+
 }
