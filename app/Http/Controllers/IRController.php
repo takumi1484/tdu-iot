@@ -21,6 +21,7 @@ class IRController extends Controller
         User::where('id',Auth::id())->update([
             'current_ir'=>'aaaaaa',
         ]);
+        sleep(1);
         return redirect('/');
     }
 }
