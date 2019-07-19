@@ -35,12 +35,12 @@ class HomeController extends Controller
             //不安
         ]);
     }
-    public function study($id){
+    public function study($id){//
         return view('study')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
-            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'buttons'=>Button::where('device_id',$id),
             'status'=>null,
-            'device_id'=>$id
+           'device_id'=>$id
         ]);
     }
     public function edit($id){
@@ -80,15 +80,23 @@ class HomeController extends Controller
         return redirect('/')->with('status', 'ボタンを追加しました');
     }
 
-    public function editButton(Request $request,$id){
-        Button::where('id',$id)->update([
-            'name'=>$request->button_name,
-            ]);
-        return redirect('/')->with('status', 'ボタンを編集しました');
-    }
 
-    public function deleteButton($id){
-        Button::destroy($id);
-        return redirect('/')->with('status', 'ボタンを削除しました');
-    }
+//    public function editButton(Request $request,$id){
+//        Button::where('id',$id)->get()->update([
+//            'name'=>'編集後の名前',
+//            'ir_code'=>'編集後のIRコード'
+//            ]);
+//        return redirect('/')->with('status', 'ボタンを編集しました');
+//    }
+
+//    public function deleteButton($id){
+//        Button::destroy($id);
+//        return redirect('/')->with('status', 'ボタンを削除しました');
+//    }
+
+//    public function test(Request $request){
+//        return view('study')->with([
+//           'message'=>$request
+//        ]);
+//    }
 }

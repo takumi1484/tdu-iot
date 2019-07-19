@@ -31,16 +31,14 @@
                     <div class="box0">
                         <div class="name">
                             <input class="btn1" type="button" value={{$button->name}}>
-                            <form method="POST" action="{{action('HomeController@deleteButton', ['id' => $button->id])}}">
-                            @csrf
-                            @method('delete')
-                            <!--<input class="btn2" type="button" value="編集">-->
-                                <button type="submit" class="btn2">削除</button>
-                            </form>
                         </div>
+                        <button type="submit" class="btn2" onclick="location.href='{{url('button/'.$button->id)}}'">編集</button>
                         <br>
                     </div>
                 @endforeach
+                    <div align="center">
+                        <input type="button" class="add_btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
+{{--/*
                 <br>
                 <div class="box0">
                     <div class="name">
@@ -52,6 +50,7 @@
                             <button type="submit" class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
                         </form>
                         <br>
+*/-}}
                     </div>
                 </div>
                 </dd>
