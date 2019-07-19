@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->text('current_ir')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

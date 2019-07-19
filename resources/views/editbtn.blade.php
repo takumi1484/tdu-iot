@@ -2,14 +2,16 @@
 <link href="{{ asset('css/editbutton.css') }}" rel="stylesheet">
 @section('content')
     <div class="button_edit">
-        <form method="POST" action="{{ action('HomeController@editButton', $button_id)}}">
+        <form method="POST" action="{{ action('EditButtonController@editButton', ['id'=>$button_id])}}">
             @csrf
             <p>ボタン名の変更</p>
-            <input type="text" class="new_button_name" name="button_name" required maxlength="8" placeholder="新しいボタン名"><br><br>
+            <p>新しい名前</p>
+            <input type="text" name="new_name" class="new_botton_name" required><br><br>
             <input type="submit" class="button" value="決定"><br><br>
         </form>
-        <form method="POST" action="{{ action('HomeController@deleteButton', $button_id)}}">
+        <form method="POST" action="{{ action('EditButtonController@deleteButton',['id' => $button_id]) }}">
             @csrf
+            @method('delete')
             <hr>
             <p>ボタンの削除</p>
             <p>ボタンを削除しますか</p>

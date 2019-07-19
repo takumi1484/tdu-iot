@@ -25,4 +25,38 @@ home.bladeでhiddenFormを利用
 区分を消したら底に属するボタンをすべて消す
 
 #getルート
+
 /api/get?user=X&device=X&button=X
+
+#ボタン追加連打するとたくさん追加される
+->一回追加を押したらjsで無効化する
+
+#middleware設定
+url欄からbutton_id,user_idを直接指定した場合に、ログイン中のユーザーの所有するボタン、区分かどうかを確認するmiddlewareを追加
+現状、存在しないidを指定すると`Trying to get property 'device' of non-object`というエラーがlaravelから出るため例外処理を考える必要あり
+
+```$xslt
+Route::get('/aaaa/{id}','HomeController@study')->middleware('check.button');//CheckButton
+Route::get('/aaaa/{id}','HomeController@study')->middleware('check.device');//CheckDevice
+```   
+というように指定すると`/aaa/{id}`にアクセスする際、button_idもしくはdevice_idからそのbutton,deviceがログイン中のユーザーの物かを調べる
+button/edit/1はidが1のボタンを作成したユーザーしか開けない
+
+※Karnel.phpにてmiddlewareを指定
+
+
+
+
+
+editbtnで削除と演習
+
+web側で学習ボタン（新規ボタン）＝＞ロード中を表示
+apiルートで以下を表示
+“Lean_IR”
+“ “
+timestamp
+
+＝＞ハード側で学習モードに＝＞信号をコピー＝＞ハードから学習したIRコードがurlに乗せて送信されてくる＝＞ロード中を解除＝＞ボタン作成
+
+/api/get?user=X&device=X&button=X
+
