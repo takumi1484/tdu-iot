@@ -9,6 +9,11 @@ class apiController extends Controller
 {
     public function get($user_name){
         $ir=User::where('name',$user_name)->first()->current_ir;
-        return $ir;
+        $updateTime=User::where('name',$user_name)->first()->updated_at;
+        return "Send_IR\n$ir\n".$updateTime;
     }
 }
+
+//“Send_IR”
+//IR_code
+//timestamp
