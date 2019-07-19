@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Button;
+use Crypt;
 
 class HomeController extends Controller
 {
@@ -39,17 +40,22 @@ class HomeController extends Controller
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',$id),
             'status'=>null,
-//            'device_id'=>$id
-            //不安
+           'device_id'=>$id
         ]);
     }
     public function edit($id){
-        return view('editbtn')->with([
-            'devices'=>Device::where('user_id',Auth::id())->get(),
-            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
-            'status'=>null,
-            'button_id'=>$id
-        ]);
+        //$id = Crypt::decrypt($id);
+        $user=Auth::user();
+        $user_id=$user->id;
+        $query=Button::where('device_id',Device::where('user_id',$user_id)->get()->where('id',$id)->first());
+        if($query !=NULL) {
+            return view('editbtn')->with([
+                'devices' => Device::where('user_id', Auth::id())->get(),
+                'buttons' => Button::where('device_id', Device::where('user_id', Auth::id())->get()),
+                'status' => null,
+                'button_id' => $id
+            ]);
+        }return redirect('/');
     }
 
     public function addDevice(Request $request){
@@ -73,6 +79,7 @@ class HomeController extends Controller
         $button->save();
         return redirect('/')->with('status', 'ボタンを追加しました');
     }
+
 
 //    public function editButton(Request $request,$id){
 //        Button::where('id',$id)->get()->update([

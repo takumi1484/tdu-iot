@@ -11,5 +11,4 @@ class apiController extends Controller
         $ir=User::where('name',$user_name)->first()->current_ir;
         return $ir;
     }
-
 }

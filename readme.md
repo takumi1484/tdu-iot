@@ -25,6 +25,7 @@ home.bladeでhiddenFormを利用
 区分を消したら底に属するボタンをすべて消す
 
 #getルート
+
 /api/get?user=X&device=X&button=X
 
 #ボタン追加連打するとたくさん追加される
@@ -56,3 +57,6 @@ apiルートで以下を表示
 timestamp
 
 ＝＞ハード側で学習モードに＝＞信号をコピー＝＞ハードから学習したIRコードがurlに乗せて送信されてくる＝＞ロード中を解除＝＞ボタン作成
+
+/api/get?user=X&device=X&button=X
+
