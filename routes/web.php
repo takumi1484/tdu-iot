@@ -35,7 +35,8 @@ Route::group(['prefix' => 'button'], function () {//button
 
 //    Route::get('/study/{id}','HomeController@study')->middleware('check.button');
 
-
 });
+
+Route::post('/{id}','IRController@updateIR');
 
 

@@ -19,8 +19,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 Route::get('/{user_name}','apiController@get');
-Route::get('/{user_name}','apiController@get');
+//Route::get('/{user_name}','apiController@get');
 //Route::get('/get','apiController@get');
+
+
+//Route::post('/','IRController@updateIR');
 
 
 
