@@ -40,7 +40,7 @@ class HomeController extends Controller
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',$id),
             'status'=>null,
-           'device_id'=>$id
+            'device_id'=>$id
         ]);
     }
     public function edit($id){
