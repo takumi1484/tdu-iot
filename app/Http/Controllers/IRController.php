@@ -11,15 +11,16 @@ use Illuminate\Support\Facades\Auth;
 class IRController extends Controller
 {
     public function updateIR($id){
-//        User::where('id',Auth::id())->first()->update([
-//            'current_ir'=>'aaaaaa',
-//        ]);
+
 
         $button=Button::where('id',$id)->first();
 
-        $user = User::where('id',Auth::id())->first();
-        $user->current_ir=$button->ir_code;
-        $user->save();
+//        $user = User::where('id',Auth::id())->first();
+//        $user->current_ir=$button->ir_code;
+//        $user->save();
+        User::where('id',Auth::id())->update([
+            'current_ir'=>'aaaaaa',
+        ]);
         return redirect('/');
     }
 }

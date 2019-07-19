@@ -23,7 +23,7 @@ Route::get('/{user_name}','apiController@get');
 //Route::get('/get','apiController@get');
 
 
-//Route::post('/','IRController@updateIR');
+Route::post('/','IRController@updateIR');
 
 
 
