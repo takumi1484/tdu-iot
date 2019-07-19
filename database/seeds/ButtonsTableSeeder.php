@@ -14,7 +14,7 @@ class ButtonsTableSeeder extends Seeder
         $param=[
             'name'=>'電源ON',
             'device_id'=>'1',
-            'ir_code'=>'3\n16711935',
+            'ir_code'=>'3?16711935',
             'created_at'=> '2018-11-03 00:00:00',
             'updated_at'=> '2018-11-03 00:00:00'
         ];
@@ -22,7 +22,7 @@ class ButtonsTableSeeder extends Seeder
         $param=[
             'name'=>'電源OFF',
             'device_id'=>'1',
-            'ir_code'=>'3\n16744575',
+            'ir_code'=>'3?16744575',
             'created_at'=> '2018-11-03 00:00:00',
             'updated_at'=> '2018-11-03 00:00:00'
         ];
