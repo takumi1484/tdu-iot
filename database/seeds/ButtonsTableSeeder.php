@@ -19,5 +19,13 @@ class ButtonsTableSeeder extends Seeder
             'updated_at'=> '2018-11-03 00:00:00'
         ];
         DB::table('buttons')->insert($param);
+        $param=[
+            'name'=>'電源OFF',
+            'device_id'=>'1',
+            'ir_code'=>'3\n16744575',
+            'created_at'=> '2018-11-03 00:00:00',
+            'updated_at'=> '2018-11-03 00:00:00'
+        ];
+        DB::table('buttons')->insert($param);
     }
 }
