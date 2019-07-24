@@ -6,8 +6,8 @@
     <!-- loding -->
     <div id="overlay">
         <div class="cv-spinner">
-            {{--<span class="spinner"></span>--}}
-            <img src="{{ asset('img/loading_spinner.png') }}">
+            <span class="spinner"></span>
+            {{--<img src="{{ asset('img/loading_spinner.png') }}">--}}
         </div>
     </div>
     <dl>
