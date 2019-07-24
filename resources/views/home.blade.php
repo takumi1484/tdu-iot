@@ -34,7 +34,7 @@
                                 {{--                                <button type="submit" class="btn2">削除</button>--}}
                                 <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
                                     @csrf
-                                    <button type="submit" class="btn1" class="trash_btn">&nbsp&nbsp{{$button->name}}</button>
+                                    <button id="home_button" type="submit" class="btn1" class="trash_btn">&nbsp&nbsp{{$button->name}}</button>
                                 </form>
                             </div>
                             <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>

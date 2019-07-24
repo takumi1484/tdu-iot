@@ -96,11 +96,12 @@
 }
 
 .btn1 {
-    float:left;
+  float:left;
   width:70%;
   height:40px;
   background:#fff;
   border-style: solid;
+    cursor: pointer;
 }
 .btn2 {
   width:30%;
