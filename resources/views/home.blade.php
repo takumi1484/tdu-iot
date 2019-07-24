@@ -66,6 +66,12 @@
                 $(this).find('span').toggleClass('chk-shown');
                 return false ;
             });
+            $('.btn1').click( function(){
+                $("#overlay").fadeIn(500);
+                setTimeout(function(){
+                    $("#overlay").fadeOut(500);
+                },3000);
+            });
         });
         //コンパイルを通さない素のjsなのでvue warnが出る
     </script>
