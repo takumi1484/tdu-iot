@@ -98,13 +98,13 @@
 }
 
 .btn1 {
-    -webkit-appearance: none;
   float:left;
   width:70%;
   height:40px;
   background:#fff;
   border-style: solid;
-    cursor: pointer;
+    padding:5px;
+
 }
 .btn2 {
   width:30%;
