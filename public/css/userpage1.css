@@ -79,14 +79,14 @@
     justify-content: center;
     align-items: center;
 }
-.spinner {
+/*.spinner {
     width: 80px;
     height: 80px;
     border: 4px #ddd solid;
     border-top: 4px #999 solid;
     border-radius: 50%;
     animation: sp-anime 0.8s infinite linear;
-}
+}*/
 @keyframes sp-anime {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(359deg); }
@@ -127,7 +127,7 @@
   background:#fff;
   border: 1px solid;
     padding:5px;
-  background:#EEE;
+  /*background:#EEE;*/
 }
 .btn5 {
   color: #000;
