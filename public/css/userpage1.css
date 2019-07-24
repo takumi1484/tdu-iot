@@ -63,7 +63,8 @@
 /********************************************
 * Now Loading
 ********************************************/
-#overlay{ 
+#overlay{
+    -webkit-appearance: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -97,6 +98,7 @@
 }
 
 .btn1 {
+    -webkit-appearance: none;
   float:left;
   width:70%;
   height:40px;
