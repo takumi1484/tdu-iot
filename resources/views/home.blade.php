@@ -68,9 +68,9 @@
             });
             $('.btn1').click( function(){
                 $("#overlay").fadeIn(500);
-                setTimeout(function(){
+                setInterval(function(){
                     $("#overlay").fadeOut(500);
-                },3000);
+                },3000,true);
             });
         });
         //コンパイルを通さない素のjsなのでvue warnが出る
