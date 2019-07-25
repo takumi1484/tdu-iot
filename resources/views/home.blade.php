@@ -67,7 +67,7 @@
                 return false ;
             });
             $('.btn1').click( function(){
-                $("#overlay")./*show(500);*/fadeIn(500);
+                $("#overlay").show();/*fadeIn(500);*/
                 setInterval(function(){
                     $("#overlay").fadeOut(500);
                 },3000,true);
