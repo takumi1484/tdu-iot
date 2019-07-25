@@ -1,7 +1,7 @@
 @extends('layouts.app')
 <link href="{{ asset('css/userpage1.css') }}" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript" src="{{ asset('js/userpage1.js') }}" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+{{--<script type="text/javascript" src="{{ asset('js/userpage1.js') }}" defer></script>--}}
 @section('content')
     <!-- loding -->
     <div id="overlay">
@@ -56,7 +56,7 @@
         <input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>
     </form>
     <br>
-    <script>
+    <script type="text/javascript">
         $(function(){
             $( '.toggle-case' ).click( function(){
                 // [data-target]の属性値を代入する
@@ -67,8 +67,7 @@
                 return false ;
             });
             $('.btn1').click( function(){
-                alert("test");
-                $("#overlay").fadeIn(500);
+                $("#overlay")./*show(500);*/fadeIn(500);
                 setInterval(function(){
                     $("#overlay").fadeOut(500);
                 },3000,true);
