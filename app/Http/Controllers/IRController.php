@@ -19,7 +19,7 @@ class IRController extends Controller
 //        $user->current_ir=$button->ir_code;
 //        $user->save();
         User::where('id',Auth::id())->update([
-            'current_ir'=>$button->ir_code,
+            'current_ir'=>"Send_IR\n".$button->ir_code,
         ]);
         sleep(1);
         return redirect('/');

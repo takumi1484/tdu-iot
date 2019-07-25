@@ -17,7 +17,7 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('hogit me');
 
 
 
@@ -38,5 +38,11 @@ Route::group(['prefix' => 'button'], function () {//button
 });
 
 Route::post('/{id}','IRController@updateIR');
+
+Route::get('/study/start','apiController@startStudy');
+
+Route::get('/send/{user_name}','apiController@getCode');
+
+
 
 

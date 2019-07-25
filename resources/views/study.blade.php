@@ -3,11 +3,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/userpage1.js') }}" defer></script>
 @section('content')
-    <form method="POST" action="{{ action('HomeController@addButton')}}">
-        @csrf
+    <form name="set_name">
         <div class="inp">
             <br><br><p>ボタン名を入力してください</p>
-            <input class="btn_name" type="text" name="button_name" placeholder="ボタン名"required maxlength="8" size="30vw" rows="1">
+            <input class="btn_name" type="text" name="button_name" placeholder="ボタン名" required maxlength="8" size="30vw" rows="1">
             <input type="hidden" name="device_id" value="{{$device_id}}">
             <br>
             <br>
@@ -18,8 +17,56 @@
             </p>
             <br><br>
             <div align="center">
-                <input type="submit" value="学習開始" class="btn_name">
+                <input id="study_start" type="button" value="学習開始" class="btn_name" onclick="startStudy()">
             </div>
         </div>
     </form>
+    <script>
+        function startStudy(){
+            let xmlHttpRequest = new XMLHttpRequest();
+
+            xmlHttpRequest.onreadystatechange = function()
+            {
+                if( this.readyState === 4 && this.status === 200 )
+                {
+                    // console.log( this.responseText );
+                }else {
+                    // console.error("ready state : "+this.readyState+"\nstatus : "+this.status);
+                }
+            };
+            xmlHttpRequest.open( 'GET','/study/start' );
+            xmlHttpRequest.send();
+
+            document.getElementById('study_start').disabled = true;
+
+            setTimeout(()=>{
+                let IRCheck = new XMLHttpRequest();
+
+                IRCheck.onreadystatechange = function(){
+                    if( this.readyState === 4 && this.status === 200 ){
+                        if (this.responseText.match(/Learn_IR/)){//current_irがlearnのままだったらエラー表示
+                            alert("学習失敗:もう一度学習ボタンを押してください")
+                        }else{
+
+                            let ir_code = this.responseText.split(/\r\n|\r|\n/)[1];
+                            // console.log(ir_code);
+                            xmlHttpRequest.open( 'POST','{{ Request::root()}}/api/study/success/{{$device_id}}' );
+                            xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+                            xmlHttpRequest.send(`button_name=${document.forms.set_name.button_name.value}&device_id={{$device_id}}&ir_code=${ir_code}`);
+
+                            window.location.href = '/';
+                        }
+                    }else {
+                        // console.error("ready state : "+this.readyState+"\nstatus : "+this.status);
+                    }
+                };
+                IRCheck.open( 'GET','/api/{{Auth::user()->name}}' );
+                IRCheck.send();
+
+                document.getElementById('study_start').disabled = false;
+            },10000)
+
+        }
+        //コンパイル?を通さない素のjsなのでvue warnが出る
+    </script>
 @endsection
