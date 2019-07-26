@@ -72,6 +72,9 @@ li {
 .Regist-padding{
     padding: 5%;
 }     
-.search-module-input::-webkit-input-placeholder{
-    position: relative;
+[type=text]{
+    line-height: normal;
+}
+[type=password]{
+    line-height: normal;
 }

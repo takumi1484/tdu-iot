@@ -76,3 +76,9 @@ li {
 .Regist-padding{
     padding: 5%;
 } 
+[type=text]{
+    line-height: normal;
+}
+[type=password]{
+    line-height: normal;
+}
