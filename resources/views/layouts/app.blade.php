@@ -27,8 +27,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ __('IRスマートリモコン') }}
+                <a {{--class="navbar-brand"--}} href="{{ url('/') }}">
+                    <img src="{{ asset('img/smartcontroller.png') }}" height="30" align="left">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -37,9 +37,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -62,14 +60,27 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ログアウト') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    <hr>
+
+                                    <a class="dropdown-item" onclick="clickEventAlert()">
+                                        {{ __('退会') }}
+                                    </a>
+                                    {{--<form id="unsubscribe-form" action="{{ route('unsubscribe') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>--}}
+
                                 </div>
                             </li>
+                            {{--<li class="nav-item dropdown">
+                                <a class="nav-link">
+                                    サポート
+                                </a>
+                            </li>--}}
                         @endguest
                     </ul>
                 </div>
@@ -80,5 +91,10 @@
             @yield('content')
         </main>
     </div>
+    <script type="text/javascript">
+        function clickEventAlert(){
+                alert("未実装です");
+        }
+    </script>
 </body>
 </html>

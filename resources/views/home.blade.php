@@ -43,7 +43,7 @@
                         </div>
                     @endforeach
                     <div align="center">
-                        <input type="button" class="add_btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
+                        <input type="button" class="add-btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
                     </div>
                 </div>
             </div>
