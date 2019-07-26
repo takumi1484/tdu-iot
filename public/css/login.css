@@ -72,3 +72,6 @@ li {
 .Regist-padding{
     padding: 5%;
 }     
+.search-module-input::-webkit-input-placeholder{
+    position: relative;
+}
