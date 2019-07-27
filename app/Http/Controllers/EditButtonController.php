@@ -19,8 +19,8 @@ class EditButtonController extends Controller
         ]);
     }
 
-    public function deleteButton(){
-//        Button::destroy($id);
+    public function deleteButton($id){
+        Button::destroy($id);
         return redirect('/')->with('status', 'ボタンを削除しました');
     }
 
