@@ -73,6 +73,13 @@
                                     {{--<form id="unsubscribe-form" action="{{ route('unsubscribe') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>--}}
+				　　<hr>
+				    <a class="dropdown-item" onclick="clickEventAlert()">
+                                        {{ __('サポート') }}
+                                    </a>
+				　　{{--<form id="support-form" action="{{ route('support') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>--}}
 
                                 </div>
                             </li>
