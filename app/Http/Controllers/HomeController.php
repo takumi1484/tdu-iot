@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Button;
-use Crypt;
 
 class HomeController extends Controller
 {
@@ -44,7 +43,6 @@ class HomeController extends Controller
         ]);
     }
     public function edit($id){
-        //$id = Crypt::decrypt($id);
         $user=Auth::user();
         $user_id=$user->id;
         $query=Button::where('device_id',Device::where('user_id',$user_id)->get()->where('id',$id)->first());

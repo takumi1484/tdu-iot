@@ -37,12 +37,13 @@ Route::group(['prefix' => 'button'], function () {//button
 
 });
 
-Route::post('/{id}','IRController@updateIR');
+Route::post('/button/{id}','IRController@updateIR');
 
 Route::get('/study/start','apiController@startStudy');
 
 Route::get('/send/{user_name}','apiController@getCode');
 
-
+Route::get('/unregister',function (){ return view('unregister');});
+Route::post('/postunregister','Auth\SoftDeleteController@deleteData');
 
 

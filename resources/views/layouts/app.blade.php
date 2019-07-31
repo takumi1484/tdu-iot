@@ -67,7 +67,7 @@
                                     </form>
                                     <hr>
 
-                                    <a class="dropdown-item" onclick="clickEventAlert()">
+                                    <a class="dropdown-item" onclick="location.href='{{url('unregister')}}'" {{--onclick="clickEventAlert()"--}}>
                                         {{ __('退会') }}
                                     </a>
                                     {{--<form id="unsubscribe-form" action="{{ route('unsubscribe') }}" method="POST" style="display: none;">
