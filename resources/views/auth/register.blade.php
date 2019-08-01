@@ -23,7 +23,6 @@
 {{--                            </span>--}}
                             @enderror
                             <br>
-                            <br>
                             <a>ユーザー名</a>
                             <input id="name" type="text" class="textlines @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="ユーザー名を入力してください。">
                             @error('User_name')
@@ -63,7 +62,6 @@
                             <br>
                             <div class="terms" >
                                 <p>
-                                利用規約<br>
                                 この利用規約（以下，「本規約」といいます。）は，TDU Smart Controller制作チーム（以下，「当チーム」といいます。）が提供するサービス（以下，「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下，「ユーザー」といいます。）には，本規約に従って，本サービスをご利用いただきます。<br><br>
                                 第1条（適用）<br>
                                 本規約は，ユーザーと当チームとの間の本サービスの利用に関わる一切の関係に適用されるものとします。<br>
