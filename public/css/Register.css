@@ -41,6 +41,7 @@ li {
     overflow-y: auto;
     border: solid 1px #000;
     word-wrap: break-word;    
+    font-size: x-small;
 }
 .label{
     position: relative;
