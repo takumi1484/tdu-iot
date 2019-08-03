@@ -34,6 +34,6 @@ class ContactMail extends Mailable
     {
         //$addre->$this->email;
         return $this->subject("SmartControllerのサポート依頼<".$_POST["email"].">")
-                    ->view('mail'); 
+                    ->text('mail'); 
     }
 }
