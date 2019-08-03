@@ -74,7 +74,7 @@
                                         @csrf
                                     </form>--}}
 				　　<hr>
-				    <a class="dropdown-item" onclick="clickEventAlert()">
+				    <a class="dropdown-item" onclick="location.href='{{url('support')}}'">
                                         {{ __('サポート') }}
                                     </a>
 				　　{{--<form id="support-form" action="{{ route('support') }}" method="POST" style="display: none;">

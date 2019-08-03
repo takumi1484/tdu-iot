@@ -44,6 +44,11 @@ Route::get('/study/start','apiController@startStudy');
 Route::get('/send/{user_name}','apiController@getCode');
 
 Route::get('/unregister',function (){ return view('unregister');});
+
 Route::post('/postunregister','Auth\SoftDeleteController@deleteData');
 
-
+Route::get('contact', 'ContactController@index')->name('contact');
+Route::get('/support', 'ContactController@index')->name('support');
+Route::post('confirm', 'ContactController@confirm')->name('confirm');
+//Route::post('confirm', function (){ return view('confirm');});
+Route::post('/sent', 'ContactController@sent')->name('sent');

@@ -21,6 +21,16 @@
     height: 350px;
 
 }
-.go{
+.form-group{
    text-align: center;
 }
+.btn-center{
+   text-align: center;
+}
+table,td,th{
+   padding: 2px;
+   margin-left:5vw;
+   margin-right:0vw;
+   width:90vw;
+}
+
