@@ -31,7 +31,7 @@ class ContactController extends Controller
         }
 
         $request->session()->regenerateToken();
-        \Mail::to('test@example.com')->send(new ContactMail($contact));
+        \Mail::to('ikuy.s.fw11@gmail.com')->send(new ContactMail($contact));
 
         return view('thanks');
     }
