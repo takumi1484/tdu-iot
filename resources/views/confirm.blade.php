@@ -24,10 +24,10 @@
         <input type="hidden" name="email" class="form-control" id="InputEmail" value="{{ $email }}">
         <input type="hidden" name="message" class="form-control" id="InputMessage" value="{{ $message }}">
     
-    
-    <button type="submit" name="action" class="btn btn-primary" value="back"style="margin-left:40vw">戻る</button>
-    <button type="submit" name="action" class="btn btn-primary" value="sent">送信</button>
-    
+    <div class="sbtn-cen">
+    <button class ="cen" type="submit" name="action" class="btn btn-primary" value="back">戻る</button>
+    <button class ="cen" type="submit" name="action" class="btn btn-primary" value="sent">送信</button>
+    </div>
     </form>
 </div>
 @endsection

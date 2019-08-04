@@ -33,4 +33,11 @@ table,td,th{
    margin-right:0vw;
    width:90vw;
 }
+.sbtn-cen{
+   text-align:center;
+   
+}
+.cen{
+   display:inline-block;
+}
 
