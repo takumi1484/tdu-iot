@@ -1,0 +1,24 @@
+.add_device{
+    text-align: center;
+}
+.trash_btn{
+    background: #ffffff;
+    border:none #ffffff;
+    float:left;
+    padding:5px;
+    margin-left: 5%;
+}
+.btn5 {
+    color: #000;
+    border: 1px solid #AAA;
+    margin-bottom: .3em;
+    text-align: left;
+    display: table; 
+    width:60%;
+    margin-left: 20%;
+    padding:5px 5px 5px 5px;
+}
+.button{
+    border: 1px solid black;
+    border-radius:10%; 
+  }
