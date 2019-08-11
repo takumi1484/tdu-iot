@@ -1,12 +1,12 @@
 
-.unsubscribe{
-    font-size: 11px;
-    margin-top: 10%;
+.unregister{
+    font-size: 80%;
     text-align: center;
 }
-.form{
-    border-radius: 5px;
+.pass{
+    width: 200px;
 }
-.taika{
-    text-align: center;
+.button{
+    border: 1px solid black;
+    border-radius:10%;
 }

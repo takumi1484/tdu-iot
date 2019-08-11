@@ -52,3 +52,8 @@ Route::get('/support', 'ContactController@index')->name('support');
 Route::post('confirm', 'ContactController@confirm')->name('confirm');
 //Route::post('confirm', function (){ return view('confirm');});
 Route::post('/sent', 'ContactController@sent')->name('sent');
+
+Route::get('/addDevice',function (){ return view('add_device');});
+
+Route::post('/searchData','ShareController@searchData');
+Route::post('/copyData','HomeController@copyDevice');

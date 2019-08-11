@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Auth\ForgotPasswordController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Button;
+use Illuminate\Support\Facades\Facade;
 
 class HomeController extends Controller
 {
@@ -60,8 +62,33 @@ class HomeController extends Controller
         $devices=new Device;
         $devices->name=$request->device_name;
         $devices->user_id=Auth::id();
+        $devices->manufacturer=$request->manufacturer;
+        $devices->product=$request->product;
+        $devices->shared=true;
+        $devices->copied=false;
         $devices->save();
         return redirect('/')->with('status', '区分を追加しました');
+    }
+
+    public function copyDevice(Request $request){
+        $user_id = Auth::id();
+        $id = $request->input('id');
+        $device = Device::find($id)->replicate();
+        $device->user_id = $user_id;
+        $device->shared = False;
+        $device->copied = True;
+        $device->save();
+
+        $buttons = Button::where('device_id',$id);
+        if ($buttons->exists()) {
+            foreach ($buttons->get() as $button) {
+                $new_button = $button->replicate();
+                $new_button->device_id = $device->id;
+                $new_button->save();
+            }
+        }
+
+        return redirect('/')->with('status', 'コピーしました');
     }
 
     public function deleteDevice($id){

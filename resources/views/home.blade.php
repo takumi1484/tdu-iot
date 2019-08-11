@@ -11,6 +11,7 @@
         </div>
     </div>
     <dl>
+        {{ session('status') }}
         @foreach($devices as $device)
             <br>
             <div>
@@ -50,11 +51,11 @@
         @endforeach
     </dl>
     <br>
-    <form method="POST" action="{{ action('HomeController@addDevice')}}">
-        @csrf
-        <button type="submit"class="trash_btn"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
-        <input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>
-    </form>
+    {{--<form method="POST" action="{{ action('HomeController@addDevice')}}">
+        @csrf--}}
+        <button type="submit"class="trash_btn" onclick="location.href='{{url('/addDevice')}}'"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
+        {{--<input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>--}}
+    {{--</form>--}}
     <br>
     <script type="text/javascript">
         $(function(){

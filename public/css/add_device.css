@@ -1,0 +1,17 @@
+.add_device{
+    text-align: center;
+}
+.btn5 {
+    color: #000;
+    border: 1px solid #AAA;
+    margin-bottom: .3em;
+    text-align: left;
+    display: table; 
+    width:60%;
+    margin-left: 20%;
+    padding:5px 5px 5px 5px;
+}
+.button{
+    border: 1px solid black;
+    border-radius:10%; 
+  }
