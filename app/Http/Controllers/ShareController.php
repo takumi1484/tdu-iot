@@ -20,10 +20,10 @@ class shareController extends Controller
         $devices = Device::where('shared',true)
         ->where('manufacturer',$request->input('manufacturer'));
         if($request->input('product')) {
-            $devices->where('product', $request->input('product'));
+            $devices->where('product', 'LIKE', "%{$request->input('product')}%");
         }
         if($request->input('device_name')) {
-            $devices->where('name', $request->input('device_name'));
+            $devices->where('name', 'LIKE', "%{$request->input('device_name')}%");
         }
         /*if(!$devices->first()){return redirect('/');}*/
         $devices = $devices->get();
