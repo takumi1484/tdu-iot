@@ -17,7 +17,7 @@ class CreateDevicesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->unsignedInteger('user_id');
-            $table->string('product');
+            $table->string('product')->nullable();
             $table->string('manufacturer');
             $table->boolean('shared');
             $table->boolean('copied');
