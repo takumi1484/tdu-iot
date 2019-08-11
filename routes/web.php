@@ -41,7 +41,7 @@ Route::post('/button/{id}','IRController@updateIR');
 
 Route::get('/study/start','apiController@startStudy');
 
-Route::post('/send/{user_name}','apiController@getCode');
+Route::get('/send/{user_name}','apiController@getCode');
 
 Route::get('/unregister',function (){ return view('unregister');});
 

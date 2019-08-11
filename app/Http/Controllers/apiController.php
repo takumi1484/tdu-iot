@@ -16,15 +16,20 @@ class apiController extends Controller
     }
 
     public function getCode(Request $request,$user_name){//送られてきたIRをcurrent_irに設定
+        if(User::where('name',$user_name)->first()->studying == false){
+            return \App::abort(404);
+        }
         User::where('name',$user_name)->update([
-            'current_ir'=>"Send_IR\n".$request->input('code')
+            'current_ir'=>"Send_IR\n".$request->input('code'),
+            'studying'=>0
         ]);
     }
 
     //xhr関係
     public function startStudy(){
         User::where('id',Auth::id())->update([
-            'current_ir'=>"Learn_IR\n"
+            'current_ir'=>"Learn_IR\n",
+            'studying'=>1
         ]);
 //        return null;
     }

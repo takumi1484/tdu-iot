@@ -29,6 +29,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        User::find(Auth::id())->update([
+            'studying'=>0
+        ]);
         return view('home')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),

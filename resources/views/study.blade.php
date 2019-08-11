@@ -86,15 +86,15 @@
            {{--    },1000)--}}
            {{--}--}}
 
-           loopSleep(300, 1000, function(i){
+           loopSleep(180, 1000, function(i){
                IRCheck.open( 'GET','/api/{{Auth::user()->name}}' );
                IRCheck.send();
                if (requested === true) {
                    document.getElementById('study_start').disabled = false;
                    return false;
-               }else if(i===300-1){
+               }else if(i===180-1){
                    alert("タイムアウト\n" +
-                       "5分以内に学習を行なってください");
+                       "3分以内に学習を行なってください");
                    document.getElementById('study_start').disabled = false;
                }
            });
