@@ -1,17 +1,38 @@
 .add_device{
     text-align: center;
 }
+p{
+    font-size: large;
+}
 .btn5 {
-    color: #000;
-    border: 1px solid #AAA;
-    margin-bottom: .3em;
-    text-align: left;
-    display: table; 
-    width:60%;
-    margin-left: 20%;
-    padding:5px 5px 5px 5px;
+    border: 1px solid #1B73BA;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #333;
+    font-size: 13px;
+    padding: 10px;
+    height: 40px;
+    width: 300px;
 }
 .button{
-    border: 1px solid black;
-    border-radius:10%; 
-  }
+    background-color: #1B73BA;
+    background-position: 10px;
+    border: 2px solid #1B73BA;
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    height: 35px;
+    width: 100px;
+}
+.button:hover{
+    opacity: 0.6;
+}
