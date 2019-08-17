@@ -17,12 +17,8 @@
             <div>
                 <dt class="add-control" >
 
-                    <form method="POST" action="{{action('HomeController@deleteDevice', ['id' => $device->id])}}">
-                        @csrf
-                        @method('delete')
-                        <button type="submit" class="trash_btn"><img src="{{ asset('img/trash_box.png') }}" class="btn3"></button>        
-                    </form>
-                    <button type="submit" class="btn6"  onclick="location.href='{{action('EditDeviceController@index', ['id'=>$device])}}'">編集</button>
+                    
+                    <button type="submit" class="btn6"  onclick="location.href='{{action('EditDeviceController@index', ['id'=>$device])}}'"><img src="{{ asset('img/edit_button.png') }}" class="btn3"></button>
                         
                         
                             <div class="toggle-case" data-target="target_{{$device->id}}">

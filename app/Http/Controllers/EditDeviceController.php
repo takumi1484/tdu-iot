@@ -15,7 +15,7 @@ class EditDeviceController extends Controller
     }
     public function index($id)
     {
-        return view('editkbn')->with([
+        return view('editdevice')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'status'=>null,
             'device_id'=>$id,

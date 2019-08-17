@@ -6,7 +6,7 @@
     text-align: left;
     display: table;
     width:60%;
-    margin-left: 20%;
+    margin-left: 15%;
     padding:5px 5px 5px 10px;
 }
 .btn0:hover {
@@ -150,7 +150,7 @@
   float:right;
   background:#fff;
   border: 1px solid #777;
-  margin-right: 5%;
+  margin-right: 10%;
 }
 .btn-animation-02 {
     -webkit-appearance: none;
