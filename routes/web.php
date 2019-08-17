@@ -24,9 +24,9 @@ Route::get('/', 'HomeController@index')->name('hogit me');
 Route::group(['prefix' => 'device'], function () {//区分
     Route::post('/add','HomeController@addDevice');
     Route::get('editkbn/{id}','EditDeviceController@index');
-    Route::post('editkbn/{id}','EditDeviceController@editDevice');
+    Route::post('edit/{id}','EditDeviceController@editDevice');
     Route::delete('/{id}', 'HomeController@deleteDevice');
-    Route::post('editkbn/','EditDeviceController@sharebutton');
+    Route::post('editkbn/{id}','EditDeviceController@sharebutton');
     
 });
 Route::group(['prefix' => 'button'], function () {//button

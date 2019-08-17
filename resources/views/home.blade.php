@@ -22,7 +22,7 @@
                         @method('delete')
                         <button type="submit" class="trash_btn"><img src="{{ asset('img/trash_box.png') }}" class="btn3"></button>        
                     </form>
-                    <button type="submit" class="btn6"  onclick="location.href='{{url('device/editkbn/'.$device->id .$device->name)}}'">編集</button>
+                    <button type="submit" class="btn6"  onclick="location.href='{{action('EditDeviceController@index', ['id'=>$device])}}'">編集</button>
                         
                         
                             <div class="toggle-case" data-target="target_{{$device->id}}">
