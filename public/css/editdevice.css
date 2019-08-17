@@ -1,0 +1,137 @@
+.device_edit{
+  text-align: center;
+}
+.new_device_name{
+  border: solid 1px #000;
+}
+.button{
+  border: 1px solid black;
+  border-radius:10%; 
+}
+.line{
+  border-bottom: 1px black;
+}
+.cent{
+  display: inline-block
+}
+.tab_wrap{
+  width:70vw; margin:10vw auto;
+}
+input[type="radio"]{
+  display:none;
+}
+.tab_area{
+  font-size:0; margin:0 0;
+}
+.tab_area label{
+  width:50%; 
+  margin:0 0; 
+  display:inline-block; 
+  padding:12px 0; 
+  
+  text-align:center; 
+  font-size:13px; 
+  cursor:pointer; 
+  transition:ease 0.2s; 
+  border:4px solid rgb(144, 207, 158); 
+  border-bottom:none; 
+  border-radius:30% 5% 2% 5%/ 14% 40% 25% 25%; 
+  transform:translateY(8px); 
+  position:relative;
+ 
+}
+.tab_area label:hover{
+  opacity:1;
+}
+.panel_area{
+  width:100%; 
+  background:#fff; 
+  border:4px solid rgb(144, 207, 158); 
+  border-radius:2% 12% 2% 12%/ 22% 8% 22% 8%; 
+  position:relative; z-index:0;}
+
+.tab_panel{
+  width:100%; 
+  padding:80px 0; 
+  display:none;
+}
+.tab_panel p{
+  font-size:14px; 
+  letter-spacing:1px; 
+  text-align:center;
+}
+#tab1:checked ~ .tab_area .tab1_label{
+  color:#fff; 
+  background:rgb(144, 207, 158); 
+}
+#tab1:checked ~ .panel_area #panel1{
+  display:block;
+}
+#tab2:checked ~ .tab_area .tab2_label{
+  color:#fff; 
+  background:rgb(144, 207, 158); 
+}
+#tab2:checked ~ .panel_area #panel2{
+  display:block;
+}
+.save{
+  position: relative;
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #FFF;
+  background:rgb(144, 207, 158);;/*色*/
+  border: solid 1px rgb(144, 207, 158);;/*線色*/
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+
+.save:active {
+  /*押したとき*/
+  border: solid 1px #03A9F4;
+  box-shadow: none;
+  text-shadow: none;
+}
+.sample3Area {
+  margin         : auto;                /* 中央寄せ           */
+  width          : 60px;                /* ボタンの横幅       */
+}
+ 
+ /* === チェックボックス ==================================== */
+.sample3Area input[type="submit"] {
+  display        : none;            /* チェックボックス非表示 */
+}
+ 
+ /* === チェックボックスのラベル（標準） ==================== */
+.sample3Area label {
+  display        : block;               /* ボックス要素に変更 */
+  box-sizing     : border-box;          /* 枠線を含んだサイズ */
+  text-align     : center;              /* 文字位置は中央     */
+  border         : 2px solid #ccc;      /* 枠線(一旦四方向)   */
+  border-radius  : 3px;                 /* 角丸               */
+  height         : 60px;                /* ボタンの高さ       */
+  font-size      : 18px;                /* 文字サイズ         */
+  line-height    : 60px;                /* 太字               */
+  font-weight    : bold;                /* 太字               */
+  background     : #eee;                /* 背景色             */
+  box-shadow     : 3px 3px 6px #888;    /* 影付け             */
+  transition     : .3s;                 /* ゆっくり変化       */
+}
+ 
+ /* === ON側のチェックボックスのラベル（ONのとき） ========== */
+.sample3Area label span:after{
+  content        : "OFF";               /* 表示する文字       */
+  color          : #aaa;
+}
+.sample3Area #sample3check:checked + label {
+  background     : #78bd78;             /* 背景色             */
+  box-shadow     : none;                /* 影を消す           */
+}
+.sample3Area #sample3check:checked + label span:after {
+  content        : "ON";                /* 表示する文字       */
+  color          : #fff;                /* 文字色             */
+}
+.we{
+  border: 1px solid #777;
+}

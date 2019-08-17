@@ -21,6 +21,7 @@
     margin-right: 25%;
 }
 
+
 /* checkbox non-display */
 /*.add-control .chk{*/
 /*    display: none;*/
@@ -50,12 +51,13 @@
 .chk-hidden::before{
     content: "▽ " ;
     border-right:solid 1px #777;
-    padding:5px;
+    
+    
 }
 .chk-shown::before{
     content: "△ " ;
     border-right:solid 1px #777;
-    padding:5px;
+    
 }
 
 
@@ -142,7 +144,14 @@
   margin-left: 20%;
   padding:5px 5px 5px 5px;
 }
-
+.btn6 {
+  width:15%;
+  height:35px;
+  float:right;
+  background:#fff;
+  border: 1px solid #777;
+  margin-right: 5%;
+}
 .btn-animation-02 {
     -webkit-appearance: none;
     display: inline-block;

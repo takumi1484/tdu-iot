@@ -99,6 +99,7 @@ class HomeController extends Controller
         Button::where('device_id',$id)->delete();
         return redirect('/')->with('status', '区分を削除しました');
     }
+
     public function addButton(Request $request){
         $button=new Button();
         $button->name=$request->button_name;
