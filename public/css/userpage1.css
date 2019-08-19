@@ -145,12 +145,13 @@
   padding:5px 5px 5px 5px;
 }
 .btn6 {
-  width:15%;
-  height:35px;
-  float:right;
-  background:#fff;
-  border: 1px solid #777;
+  background: #ffffff;
+  border:none #ffffff;
+  float:left;
+  padding: 5px;
+  margin-left: 5%;
   margin-right: 10%;
+
 }
 .btn-animation-02 {
     -webkit-appearance: none;
