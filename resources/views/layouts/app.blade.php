@@ -55,6 +55,13 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
+                                <form id="getTemp" action="{{ action('apiController@updateTemparature',['name'=>Auth::user()->name])}}" method="GET">
+                                    @csrf
+                                    <a id="temperature" style="color: #6c757d;" >現在の部屋温度</a>
+                                    {{Auth::user()->current_temperature}}℃
+                                    <button type="submit" class ="btntemp" style="background: #668ad8; color: #FFF; border-bottom: solid 1px #668ad8; border-radius: 4px; margin-left:10px;">更新</button>
+                                </form>
+                                
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -102,6 +109,23 @@
         function clickEventAlert(){
                 alert("未実装です");
         }
+        let tempratureCheck = new XMLHttpRequest();
+
+            tempratureCheck.onreadystatechange = function(){
+                if( this.readyState === 4 && this.status === 200 ){
+                    if (this.responseText.match(/0?0/)){//current_irがlearnのままだったらエラー表示
+                        console.log("受信失敗")
+                    }else{
+                        requested=true;
+                        xmlHttpRequest.open( 'POST','{{ Request::root()}}/api/temparature/{{Auth::user()->name}}' );
+                        xmlHttpRequest.setRequestHeader( 'Content-Type', 'application/x-www-form-urlencoded' );
+                        xmlHttpRequest.send(`button_name=${document.forms.set_name.button_name.value}&user_id={{Auth::user()->name}}&temparature=${current_temparature}`);
+                        window.location.href = '/';
+                    }
+                }else {
+                    // console.error("ready state : "+this.readyState+"\nstatus : "+this.status);
+                }
+            };
     </script>
 </body>
 </html>

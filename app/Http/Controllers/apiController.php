@@ -24,6 +24,20 @@ class apiController extends Controller
             'studying'=>0
         ]);
     }
+    public function getTemparature(Request $request,$user_name){
+        if(User::where('name',$user_name)->first()->studying == false){
+            return \App::abort(404);
+        }
+        User::where('name',$user_name)->update([
+            'current_temperature'=>"Send_Temparature\n".$request->input('temparature')
+        ]);
+    }
+    public function updateTemparature($user_name){
+        return redirect('/')->with([
+            'current_temprature'=>User::where('name',$user_name)->first()->current_temparature
+        ]);
+    }
+
 
     //xhr関係
     public function startStudy(){
