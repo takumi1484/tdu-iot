@@ -15,16 +15,19 @@
   display: inline-block
 }
 .tab_wrap{
-  width:88vw; margin:10vw 6vw;
+  width:280px;
+  margin: auto;
 }
 input[type="radio"]{
   display:none;
 }
 .tab_area{
-  font-size:0; margin:0 0;
+  font-size:0;
+  margin:0 0;
+  max-width:280px; 
 }
 .tab_area label{
-  width:33%; 
+  width:33.3%; 
   margin:0 0; 
   display:inline-block; 
   padding:12px 0;
@@ -39,11 +42,11 @@ input[type="radio"]{
 }
 
 .panel_area{
-  width:100%; 
+  max-width:280px; 
   background:#fff; 
   border:4px solid rgb(144, 207, 158); 
   border-radius:0 0 20px 20px; 
-  position:relative; z-index:0;
+  position:relative;
 }
 
 .tab_panel{

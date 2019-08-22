@@ -25,11 +25,9 @@ class apiController extends Controller
         ]);
     }
     public function getTemparature(Request $request,$user_name){
-        if(User::where('name',$user_name)->first()->studying == false){
-            return \App::abort(404);
-        }
+        
         User::where('name',$user_name)->update([
-            'current_temperature'=>"Send_Temparature\n".$request->input('temparature')
+            'current_temperature'=>$request->input('temperature')
         ]);
     }
     public function updateTemparature($user_name){

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->string('current_ir')->default('0?0');
-	    $table->string('current_temperature')->default('0?0');
+	    $table->string('current_temperature')->default('まだ取得していません');
             $table->string('studying')->default('0');
             $table->timestamps();
             $table->softDeletes();
