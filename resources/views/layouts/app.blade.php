@@ -55,17 +55,7 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-                                @if(Request::is('/'))
-                                <form id="getTemp" action="{{ action('apiController@updateTemparature',['name'=>Auth::user()->name])}}" method="GET">
-                                    @csrf
-                                    <a id="temperature" style="color: #6c757d;" >現在の部屋温度</a>
-                                    {{Auth::user()->current_temperature}}
-                                    @if(strlen(Auth::user()->current_temperature)<=3)
-                                    ℃
-                                    @endif
-                                    <button type="submit" class ="btntemp" style="background: #668ad8; color: #FFF; border-bottom: solid 1px #668ad8; border-radius: 4px; margin-left:10px;">更新</button>
-                                </form>
-                                @endif
+                                
                                 
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
