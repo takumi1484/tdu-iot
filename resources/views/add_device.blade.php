@@ -20,6 +20,9 @@
             <input class = "btn5" type="text" name="device_name" placeholder="区分名" maxlength="15"><br><br>
             <input type="submit" class="button" value="検索"><br><br>
         </form>
+
+
+
         <input type="button" class="button" value="戻る" onclick="location.href='{{url('/')}}'">
     </div>
 @endsection

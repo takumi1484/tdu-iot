@@ -15,6 +15,9 @@ class DevicesTableSeeder extends Seeder
             'id'=>1,
             "name"=>"ランプ",
             "user_id"=>1,
+            "manufacturer"=>"manif",
+            "shared"=>false,
+            "copied"=>false,
             'created_at'=> '2018-11-03 00:00:00',
             'updated_at'=> '2018-11-03 00:00:00',
         ];

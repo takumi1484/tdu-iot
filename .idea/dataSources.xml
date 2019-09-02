@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="tdu-iot@localhost" uuid="7e75d0ba-a26a-43a6-99f4-beebdf106c55">
+    <data-source source="LOCAL" name="tdu-iot@localhost" uuid="26a77dba-1bea-4f1b-905b-420cc84e0319">
       <driver-ref>mariadb</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>

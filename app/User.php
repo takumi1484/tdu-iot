@@ -48,4 +48,7 @@ class User extends Authenticatable
     public function device(){
         return $this->hasMany('App\Device');
     }
+    public function macro(){
+        return $this->hasMany('App\Macro');
+    }
 }
