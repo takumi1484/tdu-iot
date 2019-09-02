@@ -25,7 +25,7 @@ class apiController extends Controller
         ]);
     }
     public function getTemparature(Request $request,$user_name){
-        
+
         User::where('name',$user_name)->update([
             'current_temperature'=>$request->input('temperature')
         ]);
@@ -52,6 +52,10 @@ class apiController extends Controller
         $button->device_id=$request->device_id;
         $button->ir_code=$request->ir_code;
         $button->save();
+    }
+
+    public function runMacro(){
+
     }
 }
 

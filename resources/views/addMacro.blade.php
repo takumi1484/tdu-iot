@@ -11,7 +11,7 @@
         @endforeach
         <hr>
         <label>マクロ名：
-            <input type="text" name="macro_name">
+            <input id="macro_name" type="text" name="macro_name" required>
         </label>
         <h3>実行リスト</h3>
         <div id="order-list"></div>
@@ -38,6 +38,8 @@
         }
         function send() {
             let send = [];
+            let macroName = document.getElementById('macro_name').value;
+            if(macroName==="")return;
             calls.forEach((items,index)=>{
                 send.push({number:index,buttonId:items.buttonId,buttonName:items.buttonName})
             });
@@ -46,7 +48,8 @@
             let xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
-                    console.log(this.responseText);
+                    // console.log(this.responseText);
+                    document.location.href = '{{ Request::root()}}';//ページ遷移用
                 } else if (this.readyState === 4) {
                     console.error(this.responseText);
                 }
@@ -54,7 +57,8 @@
             xhr.open('POST', '{{ Request::root()}}/macro/add');
             xhr.setRequestHeader( 'Content-Type', 'application/json');
             xhr.setRequestHeader( 'X-CSRF-Token', csrf );
-            xhr.send(JSON.stringify(send));
+            // xhr.send(JSON.stringify(send));
+            xhr.send(JSON.stringify({buttons:send,name:macroName}));
             // console.log(JSON.stringify(calls));
         }
     </script>

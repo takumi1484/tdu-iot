@@ -26,22 +26,19 @@ class AddMacroController extends Controller
     }
 
     public function addMacro(Request $request){
-//        $macro = new Macro;
-//        $macro->name = $request->＃＃＃フォーム名＃＃＃;
-//        $macro->user_id = Auth::id();
-//        $macro->save();
-//
-//        $buttons = $request->buttons;//フォームから選択されたボタン(複数)
-//        //選択したボタンの数だけ、macro_relationを作成
-//        foreach ($buttons as $button){
-//            $macroRelation = new MacroRelation;
-//            $macroRelation->macro_id = $button[''];
-//            $macroRelation->button_id = $button[''];
-//            $macroRelation->save();
-//        }
-//        return redirect('/');
-//        echo $request;
-        return $request;
+        $macro = new Macro;
+        $macro->name = $request->name;
+        $macro->user_id = Auth::id();
+        $macro->save();
+
+        foreach ($request->buttons as $button){
+            $macroRelation = new MacroRelation;
+            $macroRelation->macro_id = $macro->id;
+            $macroRelation->button_id = $button["buttonId"];
+            $macroRelation->calling_number = $button["number"];
+            $macroRelation->save();
+        }
+//        return "qawsed";//ここでreturnする内容がリクエストの応答結果になる
     }
     public function removeMacro($id){
         Macro::destroy($id);
