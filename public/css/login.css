@@ -27,11 +27,12 @@ li {
     border-radius: 5px;
 }
 .Registration{
-    border: solid 1px #000;
+    border: solid 1px #e9e9e9;
     border-radius: 10px;
     margin: auto;
     max-width: 300px;
     font-size: 14px;
+    box-shadow: 2px 2px 4px gray;
 }
 .terms{
     height:200px;
@@ -50,28 +51,38 @@ li {
     margin:0 auto;
     font-weight:bold;
     display: inline-block;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      border-bottom: solid 2px #627295;
-      border-radius: 1.5px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-bottom: solid 2px #627295;
+    border-radius: 5px;
       
 }
 .textlines {
-    resize: none;
-    border: 1px solid;
-    border-radius: 0.67em;
-    background-color: WHITE;
+    border: none;
+    border-bottom: 2px solid #e9e9e9;
+    color: #666;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    height: 50px;
+    transition: border-color 0.3s;
     width: 100%;
-    line-height: 0.5;
-    height: 2.5em;
-    font-size: 14px;
+}
+.textlines:focus{
+    border-bottom: 2px solid #c0c0c0;
+    outline: none;
 }
 .paddings{
     padding: 15px;
 }
 .Regist-padding{
     padding: 5%;
-}     
+    border-radius: 8px 8px 0 0;
+    background-color: #e9e9e9;
+    color: #666;
+}
+.form-check-label{
+    color: #666;
+}
 [type=text]{
     line-height: normal;
 }
