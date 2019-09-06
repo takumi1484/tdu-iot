@@ -1,6 +1,9 @@
 body{
     background-color: WHITE;
 }
+*:focus{
+    outline: none;
+}
 .main-nav{
     display: flex;
     list-style: none; 
