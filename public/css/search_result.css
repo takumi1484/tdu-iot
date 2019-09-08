@@ -21,4 +21,5 @@ table tr:nth-child(odd){
     border-radius: 4px;
     text-shadow: 0 1px 0 rgba(0,0,0,0.2);
     margin-top: 10px;
+    border: none;
 }
