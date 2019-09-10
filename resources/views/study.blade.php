@@ -17,7 +17,7 @@
             </p>
             <br><br>
             <div align="center">
-                <input id="study_start" type="button" value="学習開始" class="btn_name" onclick="startStudy()">
+                <input id="study_start" type="button" value="学習開始" class="button" onclick="startStudy()">
             </div>
         </div>
     </form>

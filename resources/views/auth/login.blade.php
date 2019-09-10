@@ -9,15 +9,13 @@
                         <div class="Regist-padding">
                             <a>ログイン</a>
                         </div>
-                        <hr color="black" size="1"></hr>
                         <br>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class ="paddings">
-                            <a>ユーザー名</a>
                             <br>
-                                <input id="name" type="text" class="textlines @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="ユーザー名を入力してください。">
+                                <input id="name" type="text" class="textlines @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="ユーザー名">
 
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -25,9 +23,7 @@
                                     </span>
                                 @enderror
                         <br><br>
-                            <a>パスワード</a>
-                            <br>
-                                <input id="password" type="password" class="textlines @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="パスワードを入力してください。">
+                                <input id="password" type="password" class="textlines @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="パスワード">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

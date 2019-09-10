@@ -4,6 +4,10 @@
     text-align: center;
 }
 .pass{
+    display: flex;
+    list-style: none;
+    border-radius: 5px;
+    margin: auto;
     width: 200px;
 }
 .button{
