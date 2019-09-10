@@ -1,0 +1,25 @@
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: none;
+    font-size: small;
+    width: 320px;
+    text-align: center;
+}
+table th,table td{
+    width: 25%;
+}
+table th{
+    background-color: rgb(144, 207, 158);
+}
+table tr:nth-child(odd){
+    background-color: #eee
+}
+.bt{
+    color: #FFF;
+    background:rgb(144, 207, 158);/*色*/
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    margin-top: 10px;
+    border: none;
+}

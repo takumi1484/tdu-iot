@@ -10,7 +10,8 @@
     display: flex;
     list-style: none; 
     border-radius: 5px;
-    margin: auto; 
+    margin: auto;
+
 }
 .form{
     display: flex;

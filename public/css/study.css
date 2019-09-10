@@ -4,17 +4,42 @@
     font-size: 80%;
     
 }
-.button_name{
-    border: solid 1px #000; 
+.btn_name{
+    border: 1px solid rgb(144, 207, 158);
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #333;
+    font-size: 13px;
+    padding: 10px;
+    height: 30px;
+    width: 270px;
 }
 .kubun_name{
     border: solid 1px #000; 
 }
 .message{
     text-align:left;
-    width: 200px;
+    width: 240px;
     padding:10px;
     margin: auto;
     border: 1px solid #AAA;
     border-radius: 10%;
+}
+.button{
+    background-color: rgb(144, 207, 158);
+    background-position: 10px;
+    border: 2px solid rgb(144, 207, 158);
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    height: 35px;
 }

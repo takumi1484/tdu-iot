@@ -5,7 +5,7 @@ p{
     font-size: large;
 }
 .btn5 {
-    border: 1px solid #1B73BA;
+    border: 1px solid rgb(144, 207, 158);
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -16,9 +16,9 @@ p{
     width: 300px;
 }
 .button{
-    background-color: #1B73BA;
+    background-color: rgb(144, 207, 158);
     background-position: 10px;
-    border: 2px solid #1B73BA;
+    border: 2px solid rgb(144, 207, 158);
     border-radius: 5px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
