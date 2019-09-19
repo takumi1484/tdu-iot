@@ -36,12 +36,12 @@ class apiController extends Controller
         User::where('name',$user_name)->update([
             'current_temperature'=>$request->input('temperature')
         ]);
-    }
+    }*/
     public function updateTemparature($user_name){
         return redirect('/')->with([
             'current_temprature'=>User::where('name',$user_name)->first()->current_temparature
         ]);
-    }*/
+    }
 
 
     //xhr関係

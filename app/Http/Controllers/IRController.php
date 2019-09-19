@@ -25,7 +25,7 @@ class IRController extends Controller
         User::where('id',Auth::id())->update([
             'current_ir'=>"Send_IR\n".$button->ir_code,
         ]);
-        sleep(2);
+        sleep(1);
         return redirect('/');
     }
 }
