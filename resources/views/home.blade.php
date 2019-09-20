@@ -11,7 +11,6 @@
         </div>
     </div>
     <dl>
-
                 <form id="getTemp" action="{{ action('apiController@updateTemparature',['name'=>Auth::user()->name])}}" method="GET">
                     @csrf
                     <div class ="tempra">

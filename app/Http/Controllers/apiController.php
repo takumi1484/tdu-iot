@@ -16,27 +16,20 @@ class apiController extends Controller
     }
 
     public function getCode(Request $request,$user_name){//送られてきたIRをcurrent_irに設定
-        if($request->input('temperature')!==null){
-            User::where('name',$user_name)->update([
-                'current_temperature'=>$request->input('temperature')
-            ]);
-        }
-        else{
-            if(User::where('name',$user_name)->first()->studying == false){
+        if(User::where('name',$user_name)->first()->studying == false){
                 return \App::abort(404);
-            }
-            User::where('name',$user_name)->update([
+        }
+        User::where('name',$user_name)->update([
                 'current_ir'=>"Send_IR\n".$request->input('code'),
                 'studying'=>0
-            ]);
-        }
+        ]);
     }
-    /*public function getTemparature(Request $request,$user_name){
+    public function getTemparature(Request $request,$user_name){
         
         User::where('name',$user_name)->update([
             'current_temperature'=>$request->input('temperature')
         ]);
-    }*/
+    }
     public function updateTemparature($user_name){
         return redirect('/')->with([
             'current_temprature'=>User::where('name',$user_name)->first()->current_temparature
