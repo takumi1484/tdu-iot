@@ -46,9 +46,6 @@
             obj.style.backgroundColor = '#888888';   //
             obj.style.borderColor = '#888888';
 
-            var target = document.getElementById("fadeLayer");
-            target.style.visibility = "visible";
-
             let xmlHttpRequest = new XMLHttpRequest();
 
             xmlHttpRequest.onreadystatechange = function()
