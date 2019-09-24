@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Macro;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -35,6 +36,7 @@ class HomeController extends Controller
         return view('home')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
+            'macros'=>Macro::where('user_id',Auth::id())->get(),
             'status'=>null
             //不安
         ]);

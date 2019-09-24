@@ -5,7 +5,7 @@
         @foreach($devices as $device)
             <h4>{{$device->name}}</h4>
             @foreach($device->button as $button)
-                {{$button->name}}<button onclick="add('{{$button->id}}','{{$button->name}}')">追加</button>
+                {{$button->name}}<button onclick="add('{{$button->id}}','{{$button->name}}','{{$button->device->name}}')">追加</button>
                 <br>
             @endforeach
         @endforeach
@@ -20,8 +20,8 @@
     <script type="text/javascript">
         let calls = [];//呼び出し順に配列に格納
 
-        function add(buttonId,buttonName) {
-            calls.push({buttonId:buttonId,buttonName:buttonName});
+        function add(buttonId,buttonName,deviceName) {
+            calls.push({buttonId:buttonId,buttonName:buttonName,deviceName:deviceName});
             updateElement();
         }
         function remove(index) {
@@ -31,7 +31,7 @@
         function updateElement() {
             let body = "";
             calls.forEach((items,index)=>{
-                body = body + "<div>"+(index+1)+" : "+items.buttonName+"<button onclick='remove("+index+")'>remove</button>"+"</div>";
+                body = body + "<div>"+(items.deviceName)+" : "+items.buttonName+"<button onclick='remove("+index+")'>remove</button>"+"</div>";
                 // console.log(calls);
             });
             document.getElementById('order-list').innerHTML = body;
@@ -41,7 +41,11 @@
             let macroName = document.getElementById('macro_name').value;
             if(macroName==="")return;
             calls.forEach((items,index)=>{
-                send.push({number:index,buttonId:items.buttonId,buttonName:items.buttonName})
+                send.push({
+                    number:index,
+                    buttonId:items.buttonId,
+                    buttonName:items.buttonName
+                })
             });
 
             let csrf = document.getElementsByName('csrf-token').item(0).content;
@@ -57,7 +61,6 @@
             xhr.open('POST', '{{ Request::root()}}/macro/add');
             xhr.setRequestHeader( 'Content-Type', 'application/json');
             xhr.setRequestHeader( 'X-CSRF-Token', csrf );
-            // xhr.send(JSON.stringify(send));
             xhr.send(JSON.stringify({buttons:send,name:macroName}));
             // console.log(JSON.stringify(calls));
         }

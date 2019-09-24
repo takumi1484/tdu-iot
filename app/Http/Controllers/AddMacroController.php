@@ -38,7 +38,7 @@ class AddMacroController extends Controller
             $macroRelation->calling_number = $button["number"];
             $macroRelation->save();
         }
-//        return "qawsed";//ここでreturnする内容がリクエストの応答結果になる
+//        return "aaaaaaaaaaaaaa";//ここでreturnする内容がリクエストの応答結果になる
     }
     public function removeMacro($id){
         Macro::destroy($id);

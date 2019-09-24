@@ -17,7 +17,7 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('hogit me');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 
@@ -69,8 +69,12 @@ Route::get('/temp/{user_name}','apiController@updateTemparature');
 //macro関連
 Route::group(['prefix' => 'macro'], function () {//区分
     Route::get('/','AddMacroController@index');
+    Route::get('/edit/{id}','EditMacroController@index');
     Route::post('/add','AddMacroController@addMacro');
-//    Route::delete('/{id}', 'AddMacroController@');
+    Route::post('/update/{id}','EditMacroController@updateMacro');
+    Route::delete('/delete/{id}','EditMacroController@deleteMacro');
+    Route::post('/run','apiController@runMacro');
+    Route::get('/getData/{id}','EditMacroController@getData');
 });
 
 
