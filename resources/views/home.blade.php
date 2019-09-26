@@ -62,7 +62,7 @@
         @foreach($macros as $macro)
             <div class="box0">
                 <div class="name">
-                    <form method="POST" action="{{ action('apiController@runMacro', ['送信する値'])}}">
+                    <form method="POST" action="{{ action('apiController@runMacro', [1])}}">
                         @csrf
                         <button type="submit" class="btn1">&nbsp&nbsp{{$macro->name}}</button>
                     </form>

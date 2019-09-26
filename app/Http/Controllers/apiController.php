@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Button;
-use App\Device;
+use App\Macro;
+use App\MacroRelation;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,8 +55,12 @@ class apiController extends Controller
         $button->save();
     }
 
-    public function runMacro(){
-        //
+    public function runMacro($id){
+        $macro = Macro::find($id);
+        $macroRelations = $macro->macroRelation;
+        foreach ($macroRelations as $macroRelation){
+            echo $macroRelation;
+        }
     }
 }
 
