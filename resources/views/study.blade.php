@@ -17,7 +17,7 @@
             </p>
             <br><br>
             <div align="center">
-                <input id="study_start" type="button" value="学習開始" class="btn_name" onclick="startStudy()">
+                <input id="study_start" type="button" value="学習開始" class="button" onclick="startStudy()">
             </div>
         </div>
     </form>
@@ -42,6 +42,10 @@
         }
 
         function startStudy(){
+            var obj = document.getElementById("study_start");
+            obj.style.backgroundColor = '#888888';   //
+            obj.style.borderColor = '#888888';
+
             let xmlHttpRequest = new XMLHttpRequest();
 
             xmlHttpRequest.onreadystatechange = function()

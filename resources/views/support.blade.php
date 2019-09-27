@@ -7,7 +7,7 @@
 <form action="/confirm" method="post">
     <div class="form-group">
         <label for="inn">ご自身のメールアドレスを入力してください</label>
-        <input type="email" name="email" class="mailaddress" id="InputEmail" value="{{ old('email') }}" placeholder="メールアドレスを入力してください">
+        <input type="email" name="email" class="mailaddress" id="InputEmail" value="{{ old('email') }}" placeholder="メールアドレス">
         @if($errors->has('email'))
             <p class="text-danger">{{ $errors->first('email')}}</p>
         @endif

@@ -20,6 +20,24 @@
     margin-left: 25%;
     margin-right: 25%;
 }
+.add-btn{
+    background-color: rgb(144, 207, 158);
+    background-position: 10px;
+    border: 2px solid rgb(144, 207, 158);
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: smaller;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    height: 30px;
+    margin-top: 10px;
+}
 
 
 /* checkbox non-display */
@@ -200,4 +218,8 @@
 
 .btn-animation-02:hover {
     color: #FFF;
+}
+.tempra{
+    float: right;
+    margin-right: 7vw;
 }

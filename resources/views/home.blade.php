@@ -11,6 +11,18 @@
         </div>
     </div>
     <dl>
+                <form id="getTemp" action="{{ action('apiController@updateTemparature',['name'=>Auth::user()->name])}}" method="GET">
+                    @csrf
+                    <div class ="tempra">
+                    <a id="temperature" style="color: #6c757d;" >現在の部屋温度</a>
+                    {{Auth::user()->current_temperature}}
+                    @if(is_numeric(Auth::user()->current_temperature))
+                    ℃
+                    @endif
+                    <button type="submit" class ="btntemp" style="background: #668ad8; color: #FFF; border-bottom: solid 1px #668ad8; border-radius: 4px; margin-left:10px;">更新</button>
+                    </div><br>
+                </form>
+                                
         {{ session('status') }}
         @foreach($devices as $device)
             <br>
