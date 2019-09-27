@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Button;
-use App\Device;
+use App\Macro;
+use App\MacroRelation;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +26,7 @@ class apiController extends Controller
         ]);
     }
     public function getTemparature(Request $request,$user_name){
-        
+
         User::where('name',$user_name)->update([
             'current_temperature'=>$request->input('temperature')
         ]);
@@ -52,6 +53,14 @@ class apiController extends Controller
         $button->device_id=$request->device_id;
         $button->ir_code=$request->ir_code;
         $button->save();
+    }
+
+    public function runMacro($id){
+        $macro = Macro::find($id);
+        $macroRelations = $macro->macroRelation;
+        foreach ($macroRelations as $macroRelation){
+            echo $macroRelation;
+        }
     }
 }
 
