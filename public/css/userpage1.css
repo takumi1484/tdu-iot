@@ -17,8 +17,8 @@
 }
 .box0 {
     text-align: center;
-    margin-left: 25%;
-    margin-right: 25%;
+    /*margin-left: 25%;*/
+    /*margin-right: 25%;*/
 }
 .add-btn{
     background-color: rgb(144, 207, 158);
@@ -46,17 +46,17 @@
 /*}*/
 
 /* button control */
-.add-control #open-close ~ .btn0-open-close::before {
-    content: "▽ " ;
-    border-right:solid 1px #777;
-    padding:5px;
-}
+/*.add-control #open-close ~ .btn0-open-close::before {*/
+/*    content: "▽ " ;*/
+/*    border-right:solid 1px #777;*/
+/*    padding:5px;*/
+/*}*/
 /*.add-control #open-close ~ .box0 {*/
 /*    display: none ;*/
 /*}*/
-.add-control #open-close:checked ~ .btn0-open-close::before {
-    content: "△ " ;
-}
+/*.add-control #open-close:checked ~ .btn0-open-close::before {*/
+/*    content: "△ " ;*/
+/*}*/
 .add-control #open-close:checked ~ .box0 {
     display: block ;
     padding:5px;
@@ -69,15 +69,18 @@
 .chk-hidden::before{
     content: "▽ " ;
     border-right:solid 1px #777;
-    
-    
+
+
 }
 .chk-shown::before{
     content: "△ " ;
     border-right:solid 1px #777;
-    
-}
 
+}
+.accordion, .accordion2{
+    width: 350px;
+    margin: auto;
+}
 
 
 /********************************************
@@ -157,7 +160,7 @@
   border: 1px solid #AAA;
   margin-bottom: .3em;
   text-align: left;
-  display: table; 
+  display: table;
   width:60%;
   margin-left: 20%;
   padding:5px 5px 5px 5px;
@@ -168,8 +171,15 @@
   float:left;
   padding: 5px;
   margin-left: 5%;
-  margin-right: 10%;
+  margin-right: 5%;
 
+}
+.btn7{
+    background: #ffffff;
+    border:none #ffffff;
+    float:left;
+    padding: 5px;
+    margin-right: 3%;
 }
 .btn-animation-02 {
     -webkit-appearance: none;

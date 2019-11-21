@@ -2,12 +2,12 @@
 <link href="{{ asset('css/editdevice.css') }}" rel="stylesheet">
 @section('content')
     <div class="device_edit">
-        
+
             <div class="tab_wrap">
                 <input id="tab1" type="radio" name="tab_btn" checked>
                 <input id="tab2" type="radio" name="tab_btn">
                 <input id="tab3" type="radio" name="tab_btn">
-                
+
                 <div class="tab_area">
                     <label class="tab1_label" for="tab1">区分名の変更</label>
                     <label class="tab2_label" for="tab2">区分の削除</label>
@@ -22,10 +22,11 @@
                             <a>メーカー名 </a><br><input class = "we" type="text" name="new_manufacturer" value="{{$device_manufacturer}}" maxlength="15" required><br>
                             <a>製品番号 </a><br><input class = "we" type="text" name="new_product" value="{{$device_product}}"><br><br>
                             <input type="submit" class="save" value="保存する">
+                            <br><br><input type="button" class="save" value="戻る" onclick="location.href='{{url('/')}}'">
                         </form>
                     </div>
-                    
-                    
+
+
                     <div id="panel2" class="tab_panel">
                         <form method="POST" action="{{ action('HomeController@deleteDevice', ['id'=>$device_id])}}">
                             @csrf
@@ -33,16 +34,16 @@
                             <div class ="delee">
                                 <a>この区分を削除しますか</a><br><br>
                                 <input type="submit" class="save" value="はい">
-                                <input type="button" class="save" value="いいえ" onclick="location.href='{{url('/')}}'">    
+                                <input type="button" class="save" value="いいえ" onclick="location.href='{{url('/')}}'">
                             </div>
                         </form>
-                        
+
                     </div>
                     <div id="panel3" class="tab_panel">
-                        <div class="sample3Area" id="makeImg">  
+                        <div class="sample3Area" id="makeImg">
                             <form name ="sti" method="POST" action="{{ action('EditDeviceController@sharebutton' ,['id'=>$device_id])}}">
                                 @csrf
-                                <a>共有を許可する</a><br>                     
+                                <a>共有を許可する</a><br>
                                 <input type="checkbox" id="mycheck" value="hantei" name ="hantei"
                                 <?php
                                 if($device_shared>=1){
@@ -54,11 +55,12 @@
                                 <label class="check" for="mycheck"><div></div>
                                 </label>
                                 <br>
-                                <input type="submit" class="save" value="設定を保存する">                           
+                                <input type="submit" class="save" value="設定を保存">
+                                <br><br><input type="button" class="save" value="戻る" onclick="location.href='{{url('/')}}'">
                             </form>
-                        </div>   
+                        </div>
                     </div>
-                </div>  
+                </div>
             </div>
     </div>
 @endsection

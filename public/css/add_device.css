@@ -13,7 +13,7 @@ p{
     font-size: 13px;
     padding: 10px;
     height: 40px;
-    width: 300px;
+    width: 250px;
 }
 .button{
     background-color: rgb(144, 207, 158);
@@ -35,4 +35,77 @@ p{
 }
 .button:hover{
     opacity: 0.6;
+}
+.tab_wrap{
+    width:280px;
+    margin: auto;
+
+}
+input[type="radio"]{
+    display:none;
+}
+.tab_area{
+    font-size:0;
+    margin:0 0;
+    max-width:280px;
+}
+.tab_area label{
+    width:33.3%;
+    margin:0 0;
+    display:inline-block;
+    padding:12px 0;
+    text-align:center;
+    font-size:12px;
+    border:4px solid rgb(144, 207, 158);
+    border-bottom:none;
+    transform:translateY(8px);
+    position:relative;
+
+}
+
+.panel_area{
+    max-width:280px;
+    background:#fff;
+    border:4px solid rgb(144, 207, 158);
+    border-radius:0 0 20px 20px;
+    position:relative;
+}
+
+.tab_panel{
+    width:100%;
+    padding:50px 0;
+    display:none;
+}
+.tab_panel p{
+    font-size:14px;
+    letter-spacing:1px;
+    text-align:center;
+}
+#tab1:checked ~ .tab_area .tab1_label{
+    color:#fff;
+    background:rgb(144, 207, 158);
+}
+#tab1:checked ~ .panel_area #panel1{
+    display:block;
+}
+#tab2:checked ~ .tab_area .tab2_label{
+    color:#fff;
+    background:rgb(144, 207, 158);
+}
+#tab2:checked ~ .panel_area #panel2{
+    display:block;
+}
+#tab3:checked ~ .tab_area .tab3_label{
+    color:#fff;
+    background:rgb(144, 207, 158);
+}
+#tab3:checked ~ .panel_area #panel3{
+    display:block;
+}
+
+.tab1_label{
+    border-radius:10px 0 0 0;
+}
+.tab3_label{
+    border-radius:0 10px 0 0;
 }

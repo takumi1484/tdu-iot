@@ -1,0 +1,18 @@
+.button{
+    background-color: rgb(144, 207, 158);
+    background-position: 10px;
+    border: 2px solid rgb(144, 207, 158);
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    height: 35px;
+    width: 100px;
+}

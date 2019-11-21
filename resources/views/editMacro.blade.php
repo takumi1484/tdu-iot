@@ -1,27 +1,42 @@
 @extends('layouts.app')
-<link href="{{ asset('css/add_device.css') }}" rel="stylesheet">
+<link href="{{ asset('css/editmacro.css') }}" rel="stylesheet">
 @section('content')
-    <div>
+    <div align="center">
         <h3>ボタン一覧</h3>
-        @foreach($devices as $device)
-            <h4>{{$device->name}}</h4>
-            @foreach($device->button as $button)
-                {{$button->name}}<button onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">追加</button>
-                <br>
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            @foreach($devices as $device)
+                <div class="card">
+                    <div class="card-header" style="transform: rotate(0);" role="tab" id="heading{{$device->id}}">
+                        <h5 class="mb-0">
+                            <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="false" aria-controls="collapseOne">
+                                {{$device->name}}
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
+                        <div class="card-body">
+                            @foreach($device->button as $button)
+                                <button class="button2" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
             @endforeach
-        @endforeach
+        </div>
         <hr>
         <label>マクロ名：
             <input id="macro_name" type="text" name="macro_name" value='{{$macro_name->name}}' required>
         </label>
         <h3>実行リスト</h3>
         <div id="order-list"></div>
-        <button onclick="send()">更新</button>
+        <br>
+        <button class="btn btn-success" onclick="send()">更新</button><br><br>
         <form method="POST" action="{{ action('EditMacroController@deleteMacro',['id' => $macro_id]) }}">
             @csrf
             @method('delete')
-            <input type="submit" class="button" value="削除">
+            <input type="submit" class="btn btn-success" value="削除">
         </form>
+        <button type="button" class="btn btn-success">戻る</button>
     </div>
     <script type="text/javascript">
         let calls = [];//呼び出し順に配列に格納
@@ -79,7 +94,7 @@
         function updateElement() {
             let body = "";
             calls.forEach((items,index)=>{
-                body = body + "<div>"+(items.deviceName)+" : "+items.buttonName+"<button onclick='remove("+index+")'>remove</button>"+"</div>";
+                body = body + "<div>"+(items.deviceName)+" : "+items.buttonName+"<button class=\"remove\" onclick='remove("+index+")'>-</button>"+"</div>";
             });
             document.getElementById('order-list').innerHTML = body;
         }

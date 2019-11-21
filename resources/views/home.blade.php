@@ -22,69 +22,74 @@
                     <button type="submit" class ="btntemp" style="background: #668ad8; color: #FFF; border-bottom: solid 1px #668ad8; border-radius: 4px; margin-left:10px;">更新</button>
                     </div><br>
                 </form>
-                                
-        {{ session('status') }}
-        @foreach($devices as $device)
-            <br>
-            <div>
-                <dt class="add-control" >
-                    <button type="submit" class="btn6"  onclick="location.href='{{action('EditDeviceController@index', ['id'=>$device])}}'"><img src="{{ asset('img/edit_button.png') }}" class="btn3"></button>
-                    <div class="toggle-case" data-target="target_{{$device->id}}">
-                        {{--                        <input type="checkbox" class="chk" id="open-close" name="btn0" />--}}
-                        <div class="btn0 btn0-open-close" for="open-close">
-                            <span class="chk-hidden">&nbsp&nbsp{{$device->name}}</span>
-                        </div>
-                    </div>
 
-                </dt>
-                <div class="hidden_box" id="target_{{$device->id}}">
-                    @foreach($device->button as $button)
-                        <div class="box0">
-                            <div class="name">
-                                {{--                                <input class="btn1" type="button" value={{$button->name}}>--}}
-                                {{--                                <button type="submit" class="btn2">削除</button>--}}
-                                <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
-                                    @csrf
-                                    <button type="submit" class="btn1">&nbsp&nbsp{{$button->name}}</button>
-                                </form>
+        {{ session('status') }}
+
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            @foreach($devices as $device)
+                <button type="submit" class="btn7"  onclick="location.href='{{action('EditDeviceController@index', ['id'=>$device])}}'">
+                    <img src="{{ asset('img/edit_button.png') }}" class="btn3">
+                </button>
+                <div class="card">
+                    <div class="card-header" style="transform: rotate(0);" role="tab" id="heading{{$device->id}}" data-target="target_{{$device->id}}">
+                        <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="true" aria-controls="collapseOne">{{$device->name}}</a>
+                    </div>
+                    <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
+                        <div class="card-body">
+                            @foreach($device->button as $button)
+                                <div class="box0">
+                                    <button type="submit" class="btn6" onclick="location.href='{{url('button/edit/'.$button->id)}}'">
+                                        <img src="{{ asset('img/edit_button.png') }}" class="btn3">
+                                    </button>
+                                    <div class="name">
+                                        {{--                                <input class="btn1" type="button" value={{$button->name}}>--}}
+                                        {{--                                <button type="submit" class="btn2">削除</button>--}}
+                                        <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
+                                            @csrf
+                                            <button type="submit" class="btn1">&nbsp&nbsp{{$button->name}}</button>
+                                        </form>
+                                    </div>
+{{--                                    <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>--}}
+                                    <br>
+                                </div>
+                            @endforeach
+                            <div align="center">
+                                <input type="button" class="add-btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
                             </div>
-                            <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>
-                            <br>
                         </div>
-                    @endforeach
-                    <div align="center">
-                        <input type="button" class="add-btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
                     </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     </dl>
     <br>
     <div style="margin-top: -20px">
         <hr>
-        <dt class="add-control" >
-            <button type="submit" class="btn6"  onclick="location.href=''"><img class="btn3"></button>
-            <div class="toggle-case" data-target="target_macro">
-                <div class="btn0 btn0-open-close" for="open-close">
-                    <span class="chk-hidden">&nbsp&nbspマクロ</span>
+        <div class="accordion2" id="accordion2" role="tablist" aria-multiselectable="true">
+            <div class="card">
+                <div class="card-header" style="transform: rotate(0);" role="tab" id="heading" data-target="target_macro">
+                    <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse" role="button" aria-expanded="true" aria-controls="collapseOne">マクロ</a>
+                </div>
+                <div id="collapse" class="collapse" role="tabpanel" aria-labelledby="heading" data-parent="#accordion2">
+                    <div class="card-body">
+                        @foreach($macros as $macro)
+                            <div class="box0">
+                                <button type="submit" class="btn6" onclick="location.href='{{action('EditMacroController@index', ['id'=>$macro->id])}}'">
+                                    <img src="{{ asset('img/edit_button.png') }}" class="btn3">
+                                </button>
+                                <div class="name">
+                                    <form method="POST" action="{{ action('apiController@runMacro', [1])}}">
+                                        @csrf
+                                        <button type="submit" class="btn1">&nbsp&nbsp{{$macro->name}}</button>
+                                    </form>
+                                </div>
+                            </div>
+                        @endforeach
+                        <br><br>
+                    </div>
                 </div>
             </div>
-        </dt>
-        <div class="hidden_box" id="target_macro">
-        @foreach($macros as $macro)
-            <div class="box0">
-                <div class="name">
-                    <form method="POST" action="{{ action('apiController@runMacro', [1])}}">
-                        @csrf
-                        <button type="submit" class="btn1">&nbsp&nbsp{{$macro->name}}</button>
-                    </form>
-                </div>
-                <button type="submit" class="btn2" onclick="location.href='{{action('EditMacroController@index', ['id'=>$macro->id])}}'">編集</button>
-                <br>
-            </div>
-        @endforeach
         </div>
-        <hr>
     </div>
     {{--<form method="POST" action="{{ action('HomeController@addDevice')}}">
         @csrf--}}
@@ -94,14 +99,6 @@
     <br>
     <script type="text/javascript">
         $(function(){
-            $( '.toggle-case' ).click( function(){
-                // [data-target]の属性値を代入する
-                var targetBox = $( this ).data( 'target' );
-                // [target]と同じ名前のIDを持つ要素に[slideToggle()]を実行する
-                $( '#' + targetBox ).slideToggle();
-                $(this).find('span').toggleClass('chk-shown');
-                return false ;
-            });
             $('.btn1').click( function(){
                 $("#overlay").show();/*fadeIn(500);*/
                 setInterval(function(){

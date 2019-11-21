@@ -6,7 +6,7 @@
 }
 .button{
   border: 1px solid black;
-  border-radius:10%; 
+  border-radius:10%;
 }
 .line{
   border-bottom: 1px black;
@@ -17,7 +17,7 @@
 .tab_wrap{
   width:280px;
   margin: auto;
-  
+
 }
 input[type="radio"]{
   display:none;
@@ -25,83 +25,83 @@ input[type="radio"]{
 .tab_area{
   font-size:0;
   margin:0 0;
-  max-width:280px; 
+  max-width:280px;
 }
 .tab_area label{
-  width:33.3%; 
-  margin:0 0; 
-  display:inline-block; 
+  width:33.3%;
+  margin:0 0;
+  display:inline-block;
   padding:12px 0;
-  text-align:center; 
-  font-size:12px;  
-  border:4px solid rgb(144, 207, 158); 
-  border-bottom:none; 
-  transform:translateY(8px); 
+  text-align:center;
+  font-size:12px;
+  border:4px solid rgb(144, 207, 158);
+  border-bottom:none;
+  transform:translateY(8px);
   position:relative;
- 
+
 }
 
 .panel_area{
-  max-width:280px; 
-  background:#fff; 
-  border:4px solid rgb(144, 207, 158); 
-  border-radius:0 0 20px 20px; 
+  max-width:280px;
+  background:#fff;
+  border:4px solid rgb(144, 207, 158);
+  border-radius:0 0 20px 20px;
   position:relative;
 }
 
 .tab_panel{
-  width:100%; 
-  padding:50px 0; 
+  width:100%;
+  padding:50px 0;
   display:none;
 }
 .tab_panel p{
-  font-size:14px; 
-  letter-spacing:1px; 
+  font-size:14px;
+  letter-spacing:1px;
   text-align:center;
 }
 #tab1:checked ~ .tab_area .tab1_label{
-  color:#fff; 
-  background:rgb(144, 207, 158); 
+  color:#fff;
+  background:rgb(144, 207, 158);
 }
 #tab1:checked ~ .panel_area #panel1{
   display:block;
 }
 #tab2:checked ~ .tab_area .tab2_label{
-  color:#fff; 
-  background:rgb(144, 207, 158); 
+  color:#fff;
+  background:rgb(144, 207, 158);
 }
 #tab2:checked ~ .panel_area #panel2{
   display:block;
 }
 #tab3:checked ~ .tab_area .tab3_label{
-  color:#fff; 
-  background:rgb(144, 207, 158); 
+  color:#fff;
+  background:rgb(144, 207, 158);
 }
 #tab3:checked ~ .panel_area #panel3{
   display:block;
 }
 .save{
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: #FFF;
-  background:rgb(144, 207, 158);/*色*/
-  border: solid 1px ;/*線色*/
-  border-radius: 4px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    background-color: rgb(144, 207, 158);
+    background-position: 10px;
+    border: 2px solid rgb(144, 207, 158);
+    border-radius: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    height: 35px;
+    width: 100px;
 }
 
-.save:active {
-  /*押したとき*/
-  border: solid 1px #03A9F4;
-  box-shadow: none;
-  text-shadow: none;
-}
 .we{
   border: 1px solid #777;
-  border-radius:8px; 
+  border-radius:8px;
 }
 
 input[type="checkbox"] {
@@ -162,8 +162,8 @@ input[type="checkbox"]:checked + label.check > div {
   padding: 0.25em 0.5em;
 }
 .tab1_label{
-  border-radius:10px 0 0 0; 
+  border-radius:10px 0 0 0;
 }
 .tab3_label{
-  border-radius:0 10px 0 0; 
+  border-radius:0 10px 0 0;
 }

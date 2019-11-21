@@ -1,13 +1,29 @@
 @extends('layouts.app')
+<link href="{{ asset('css/addmacro.css') }}" rel="stylesheet">
 @section('content')
-    <div>
+    <div align="center">
         <h3>ボタン一覧</h3>
+        <?php $i = 0 ?>
         @foreach($devices as $device)
-            <h4>{{$device->name}}</h4>
-            @foreach($device->button as $button)
-                {{$button->name}}<button onclick="add('{{$button->id}}','{{$button->name}}','{{$button->device->name}}')">追加</button>
-                <br>
-            @endforeach
+            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="card">
+                    <div class="card-header" role="tab" id="heading{{$i}}">
+                        <h5 class="mb-0">
+                            <a class="text-body" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                                {{$device->name}}
+                            </a>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="heading{{$i}}" data-parent="#accordion">
+                        <div class="card-body">
+                            @foreach($device->button as $button)
+                                <button class="button2" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php $i++ ?>
         @endforeach
         <hr>
         <label>マクロ名：
@@ -15,7 +31,7 @@
         </label>
         <h3>実行リスト</h3>
         <div id="order-list"></div>
-        <button onclick="send()">マクロ作成</button>
+        <button class="button" onclick="send()">マクロ作成</button>
     </div>
     <script type="text/javascript">
         let calls = [];//呼び出し順に配列に格納
