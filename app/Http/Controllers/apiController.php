@@ -30,8 +30,15 @@ class apiController extends Controller
         User::where('name',$user_name)->update([
             'current_temperature'=>$request->input('temperature')
         ]);
+    }    
+    public function getHumidity(Request $request,$user_name){
+
+        User::where('name',$user_name)->update([
+            'current_humidity'=>$request->input('humidity')
+        ]);
     }
-    public function updateTemparature($user_name){
+    public function updateTemparature(){
+        $user_name=Auth::user()->name;
         return redirect('/')->with([
             'current_temprature'=>User::where('name',$user_name)->first()->current_temparature
         ]);

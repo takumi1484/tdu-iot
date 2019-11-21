@@ -83,6 +83,8 @@ Route::group(['prefix' => 'macro'], function () {//区分
 //Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
     Route::get('/send/{user_name}','apiController@getCode');
     Route::get('/temp/{user_name}','apiController@getTemparature')->name('temprature');
-    Route::get('/updatetemp/{user_name}','apiController@updateTemparature');
+    Route::get('/updatetemp','apiController@updateTemparature');
+    Route::get('/humidity/{user_name}','apiController@getHumidity')->name('humidity');
+
 //});
 

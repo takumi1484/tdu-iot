@@ -11,17 +11,25 @@
         </div>
     </div>
     <dl>
-                <form id="getTemp" action="{{ action('apiController@updateTemparature',['name'=>Auth::user()->name])}}" method="GET">
-                    @csrf
                     <div class ="tempra">
-                    <a id="temperature" style="color: #6c757d;" >現在の部屋温度</a>
-                    {{Auth::user()->current_temperature}}
-                    @if(is_numeric(Auth::user()->current_temperature))
-                    ℃
-                    @endif
-                    <button type="submit" class ="btntemp" style="background: #668ad8; color: #FFF; border-bottom: solid 1px #668ad8; border-radius: 4px; margin-left:10px;">更新</button>
+                    <input id="openWeather" type="checkbox" class="nav-unshown">
+                    <label for="openWeather"></label>
+
+                    <label class="nav-unshown" id="nav-close" for="openWeather"></label>
+                    <div id="nav-content">
+                        <div>室内温度:{{$current_temperature}}℃</div>
+                        <div>天気:{{$weather}}</div>
+                        <div>天気詳細:{{$weather_description}}</div>
+                        <div><img src='../img/{{$weather_icon}}.png' style="width:100px"></div>
+                        <div>温度:{{$temp}} ℃</div>
+                        <div>最高温度:{{$temp_max}} ℃</div>
+                        <div>最低温度:{{$temp_min}} ℃</div>
+                        <div>湿度:{{$humidity}} %</div>
+                        <div>風速:{{$wind_speed}} m</div>
+                        <div>気圧:{{$pressure}} hPa</div>
+                    </div>
                     </div><br>
-                </form>
+  
                                 
         {{ session('status') }}
         @foreach($devices as $device)
