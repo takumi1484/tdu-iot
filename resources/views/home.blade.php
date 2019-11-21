@@ -13,7 +13,7 @@
     <dl>
                     <div class ="tempra">
                     <input id="openWeather" type="checkbox" class="nav-unshown">
-                    <label for="openWeather"></label>
+                    <label for="openWeather" style=" margin-top:6px;"><img src='../img/{{$weather_icon}}.png' style="width:40px;"></label>
 
                     <label class="nav-unshown" id="nav-close" for="openWeather"></label>
                     <div id="nav-content">

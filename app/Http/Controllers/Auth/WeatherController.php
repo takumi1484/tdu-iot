@@ -48,6 +48,7 @@ class WeatherController extends Controller
                     'humidity'=>$weather['main']['humidity'],
                     'wind_speed'=>$weather['wind']['speed'],
                     'pressure'=>$weather['main']['pressure'],
+                    'created_at'=>now(),
                     'updated_at' => now()
                 ]);
             }

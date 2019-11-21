@@ -231,10 +231,8 @@ input[type="checkbox"]{
 input[type="checkbox"] + label {
     position: relative;
     display: inline-block;
-    background-image:url("../img/10d.png");
     background-size:contain;
-    width: 30px;
-    height:30px;
+
 }
 #nav-content {
     overflow: auto;
@@ -275,3 +273,4 @@ input[type="checkbox"] + label {
     -webkit-transform: translateY(-50%) translateX(-50%);
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
+

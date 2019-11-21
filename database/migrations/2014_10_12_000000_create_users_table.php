@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('current_temperature')->default('');
             $table->string('current_humidity')->default('');
             $table->string('studying')->default('0');
-            $table->string('place')->default('Tokyo');
+            $table->string('place')->default('Tokyo')->nullable(false);;
             $table->timestamps();
             $table->softDeletes();
         });
