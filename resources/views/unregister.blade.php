@@ -11,7 +11,7 @@
             @csrf
             <br>
             <input type="password" class="pass" name="pass" placeholder="パスワード" required><br><br>
-            <input type="submit" class="btn btn-primary" value="OK">
+            <input type="submit" class="btn btn-success" value="OK">
         </form>
     </div>
 @endsection

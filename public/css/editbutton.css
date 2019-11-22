@@ -13,7 +13,7 @@
   font-size: 13px;
   padding: 10px;
   height: 30px;
-  width: 270px;
+  width: 200px;
 }
 .button{
   background-color: rgb(144, 207, 158);
@@ -34,4 +34,10 @@
 }
 .line{
   border-bottom: 1px black;
+}
+.color{
+    height: 30px;
+    border: 1px solid rgb(144, 207, 158);
+    position: relative;
+    top: 5px;
 }

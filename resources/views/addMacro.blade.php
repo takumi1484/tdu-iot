@@ -3,18 +3,17 @@
 @section('content')
     <div align="center">
         <h3>ボタン一覧</h3>
-        <?php $i = 0 ?>
-        @foreach($devices as $device)
-            <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
+            @foreach($devices as $device)
                 <div class="card">
-                    <div class="card-header" role="tab" id="heading{{$i}}">
+                    <div class="card-header" style="transform: rotate(0);" role="tab" id="heading{{$device->id}}">
                         <h5 class="mb-0">
-                            <a class="text-body" data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
+                            <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="false" aria-controls="collapseOne">
                                 {{$device->name}}
                             </a>
                         </h5>
                     </div>
-                    <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="heading{{$i}}" data-parent="#accordion">
+                    <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
                         <div class="card-body">
                             @foreach($device->button as $button)
                                 <button class="button2" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br>
@@ -22,9 +21,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php $i++ ?>
-        @endforeach
+            @endforeach
+        </div>
         <hr>
         <label>マクロ名：
             <input id="macro_name" type="text" name="macro_name" required>

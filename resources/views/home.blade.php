@@ -42,14 +42,11 @@
                                         <img src="{{ asset('img/edit_button.png') }}" class="btn3">
                                     </button>
                                     <div class="name">
-                                        {{--                                <input class="btn1" type="button" value={{$button->name}}>--}}
-                                        {{--                                <button type="submit" class="btn2">削除</button>--}}
                                         <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
                                             @csrf
-                                            <button type="submit" class="btn1">&nbsp&nbsp{{$button->name}}</button>
+                                            <button type="submit" class="btn1" style="border-color: {{$button->color}}">{{$button->name}}</button>
                                         </form>
                                     </div>
-{{--                                    <button type="submit" class="btn2" onclick="location.href='{{url('button/edit/'.$button->id)}}'">編集</button>--}}
                                     <br>
                                 </div>
                             @endforeach
@@ -93,9 +90,8 @@
     </div>
     {{--<form method="POST" action="{{ action('HomeController@addDevice')}}">
         @csrf--}}
-    <button type="submit" class="trash_btn" onclick="location.href='{{url('/addDevice')}}'"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button>
-    {{--<input class="btn5" type="text" name="device_name" placeholder="新しい区分を作成" required>--}}
-    {{--</form>--}}
+    <br>
+    <div class="btn_wrap"><button type="submit" class="trash_btn" onclick="location.href='{{url('/addDevice')}}'"><img src="{{ asset('img/add_btn.png') }}" class="btn3"></button></div>
     <br>
     <script type="text/javascript">
         $(function(){

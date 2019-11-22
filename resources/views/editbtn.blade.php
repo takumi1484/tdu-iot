@@ -4,10 +4,12 @@
     <div class="button_edit">
         <form method="POST" action="{{ action('EditButtonController@editButton', ['id'=>$button_id])}}">
             @csrf
-            <label class="lab">ボタン名の変更</label>
-            <p>新しい名前</p>
-            <input type="text" name="new_name" class="new_button_name" required><br><br>
-            <input type="submit" class="button" value="決定"><br><br>
+            <label class="lab">ボタンの変更</label>
+            <p>新しい名前と色</p>
+            <input type="text" name="new_name" class="new_button_name" required>
+            <input type="color" name="new_color" class="color">
+            <br><br>
+            <input type="submit" class="btn btn-success" value="決定"><br><br>
         </form>
         <hr>
         <label class="lab">ボタンの削除</label>
@@ -15,8 +17,8 @@
         <form method="POST" action="{{ action('EditButtonController@deleteButton',['id' => $button_id]) }}">
             @csrf
             @method('delete')
-            <input type="submit" class="button" value="はい">
+            <input type="submit" class="btn btn-success" value="はい">
         </form>
-        <input type="button" class="button" value="いいえ" onclick="location.href='{{url('/')}}'"><br><br>
+        <input type="button" class="btn btn-success" value="いいえ" onclick="location.href='{{url('/')}}'"><br><br>
     </div>
 @endsection

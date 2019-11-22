@@ -17,8 +17,9 @@
 }
 .box0 {
     text-align: center;
-    /*margin-left: 25%;*/
-    /*margin-right: 25%;*/
+    margin: auto;
+    position: relative;
+    left: -17px;
 }
 .add-btn{
     background-color: rgb(144, 207, 158);
@@ -77,8 +78,14 @@
     border-right:solid 1px #777;
 
 }
-.accordion, .accordion2{
-    width: 350px;
+.accordion{
+    width: 250px;
+    margin: auto;
+    position: relative;
+    left: -19px;
+}
+.accordion2{
+    width: 212px;
     margin: auto;
 }
 
@@ -122,19 +129,12 @@
 
 .btn1 {
   float:left;
-  width:70%;
+  width:75%;
   height:40px;
   background:#fff;
   border-style: solid;
     padding:5px;
 
-}
-.btn2 {
-  width:30%;
-  height:40px;
-  float:right;
-  background:#fff;
-  border-style: solid;
 }
 .btn3 {
     width: 20px;
@@ -143,35 +143,20 @@
 .trash_btn{
     background: #ffffff;
     border:none #ffffff;
-    float:left;
-    padding:5px;
-    margin-left: 5%;
 }
-.btn4 {
-    width:70%;
-    float:right;
-  background:#fff;
-  border: 1px solid;
-    padding:5px;
-  /*background:#EEE;*/
-}
-.btn5 {
-  color: #000;
-  border: 1px solid #AAA;
-  margin-bottom: .3em;
-  text-align: left;
-  display: table;
-  width:60%;
-  margin-left: 20%;
-  padding:5px 5px 5px 5px;
+.btn_wrap{
+    text-align: center;
+    position: relative;
+    left: -130px;
 }
 .btn6 {
   background: #ffffff;
   border:none #ffffff;
   float:left;
   padding: 5px;
-  margin-left: 5%;
-  margin-right: 5%;
+    margin: auto;
+  margin-left: 3%;
+  margin-right: 3%;
 
 }
 .btn7{

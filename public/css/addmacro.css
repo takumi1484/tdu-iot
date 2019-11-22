@@ -1,18 +1,43 @@
-.button{
-    background-color: rgb(144, 207, 158);
-    background-position: 10px;
-    border: 2px solid rgb(144, 207, 158);
+input[type="text"]{
+    /*display: flex;*/
     border-radius: 5px;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    color: white;
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    -moz-transition: 0.2s ease-in-out;
-    -webkit-transition: 0.2s ease-in-out;
-    height: 35px;
+}
+.accordion{
+    width: 300px;
+}
+.button2 {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 4px;
     width: 100px;
+    height: auto;
+    color: #ffffff;
+    background: green;
+    border-bottom: solid 3px #005416;
+}
+.button2:active {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+}
+.remove{
+    display: inline-block;
+    border-radius: 50%;
+    text-decoration: none;
+    text-align: center;
+    color: pink;
+    font-weight: bold;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    line-height: 10px;
+    border: solid 2px pink;
+    background: none;
+}
+.comment{
+    font-size: x-small;
+    float: left;
+    margin-left: 50px;
 }

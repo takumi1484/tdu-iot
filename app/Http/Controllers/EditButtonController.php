@@ -29,9 +29,10 @@ class EditButtonController extends Controller
     }
 
     public function editButton(Request $request,$id){
-        Button::where('id',$id)->first()->update([
+        Button::where('id',$id)->update([
             'name'=>$request->new_name,
-            'ir_code'=>'編集後のIRコード'
+            'ir_code'=>'編集後のIRコード',
+            'color'=>$request->new_color
             ]);
         return redirect('/')->with('status', 'ボタンを編集しました');
     }
