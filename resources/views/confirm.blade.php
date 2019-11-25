@@ -12,7 +12,7 @@
     <td class="table-secondary">メールアドレス</td>
     <td>{{ $email }}</td>
     </tr>
-    
+
     <tr>
     <td class="table-secondary">メッセージ</td>
     <td>{!! nl2br(e($message)) !!}</td>
@@ -23,10 +23,10 @@
      @csrf
         <input type="hidden" name="email" class="form-control" id="InputEmail" value="{{ $email }}">
         <input type="hidden" name="message" class="form-control" id="InputMessage" value="{{ $message }}">
-    
+
     <div class="sbtn-cen">
-    <button class ="cen" type="submit" name="action" class="btn btn-primary" value="back">戻る</button>
-    <button class ="cen" type="submit" name="action" class="btn btn-primary" value="sent">送信</button>
+    <button type="submit" name="action" class="btn btn-success" value="back">戻る</button>
+    <button type="submit" name="action" class="btn btn-success" value="sent">送信</button>
     </div>
     </form>
 </div>

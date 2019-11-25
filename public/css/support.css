@@ -1,24 +1,24 @@
 
 .inn{
     display: flex;
-    list-style: none; 
+    list-style: none;
     font-size: 11px;
     width: 260px;
-    margin: auto; 
+    margin: auto;
 }
 .mailaddress{
     display: flex;
-    list-style: none; 
+    list-style: none;
     border-radius: 5px;
     margin: auto;
 
 }
 .form{
     display: flex;
-    list-style: none; 
+    list-style: none;
     border-radius: 5px;
-    margin: auto; 
-    
+    margin: auto;
+
     height: 350px;
 
 }
@@ -36,9 +36,6 @@ table,td,th{
 }
 .sbtn-cen{
    text-align:center;
-   
-}
-.cen{
-   display:inline-block;
+
 }
 
