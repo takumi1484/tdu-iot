@@ -33,6 +33,7 @@
         </label>
         <h5>実行リスト</h5>
         <div id="order-list"></div>
+        <br>
         <button class="btn btn-success" onclick="send()">マクロ作成</button><br><br>
         <button type="button" class="btn btn-success" onclick="location.href='{{url('/')}}'">戻る</button>
     </div>
