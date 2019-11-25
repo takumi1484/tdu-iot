@@ -52,6 +52,7 @@ class apiController extends Controller
         $button->name=$request->button_name;
         $button->device_id=$request->device_id;
         $button->ir_code=$request->ir_code;
+        $button->color=$request->color;
         $button->save();
     }
 

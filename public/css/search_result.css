@@ -10,16 +10,8 @@ table th,table td{
     width: 25%;
 }
 table th{
-    background-color: rgb(144, 207, 158);
+    background-color: #5cb85c;
 }
 table tr:nth-child(odd){
     background-color: #eee
-}
-.bt{
-    color: #FFF;
-    background:rgb(144, 207, 158);/*色*/
-    border-radius: 4px;
-    text-shadow: 0 1px 0 rgba(0,0,0,0.2);
-    margin-top: 10px;
-    border: none;
 }

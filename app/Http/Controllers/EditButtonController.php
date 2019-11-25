@@ -19,7 +19,9 @@ class EditButtonController extends Controller
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
             'status'=>null,
-            'button_id'=>$id
+            'button_id'=>$id,
+            'button_name'=>Button::where('id',$id)->value('name'),
+            'button_color'=>Button::where('id',$id)->value('color')
         ]);
     }
 

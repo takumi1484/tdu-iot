@@ -19,7 +19,7 @@
     text-align: center;
     margin: auto;
     position: relative;
-    left: -17px;
+    left: -19px;
 }
 .add-btn{
     background-color: rgb(144, 207, 158);
@@ -128,13 +128,20 @@
 }
 
 .btn1 {
-  float:left;
-  width:75%;
-  height:40px;
-  background:#fff;
-  border-style: solid;
-    padding:5px;
-
+    /*float:left;*/
+    /*width:75%;*/
+    /*height:40px;*/
+    /*background:#fff;*/
+    /*border-style: solid;*/
+    /*padding:5px;*/
+    width: 60%;
+    height: 27px;
+    border-radius: 25px;
+    box-shadow: inset 0px 3px 0 rgba(255,255,255,0.3), 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+.btn1:active{
+    -webkit-transform: translateY(1px);
+    transform: translateY(3px);
 }
 .btn3 {
     width: 20px;

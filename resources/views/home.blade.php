@@ -37,6 +37,9 @@
                     <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
                         <div class="card-body">
                             @foreach($device->button as $button)
+                                <div style="text-align: center">
+                                    {{$button->name}}
+                                </div>
                                 <div class="box0">
                                     <button type="submit" class="btn6" onclick="location.href='{{url('button/edit/'.$button->id)}}'">
                                         <img src="{{ asset('img/edit_button.png') }}" class="btn3">
@@ -44,14 +47,13 @@
                                     <div class="name">
                                         <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
                                             @csrf
-                                            <button type="submit" class="btn1" style="border-color: {{$button->color}}">{{$button->name}}</button>
+                                            <button type="submit" class="btn1" style="background: {{$button->color}};border: solid {{$button->color}};">&nbsp;</button>
                                         </form>
                                     </div>
-                                    <br>
                                 </div>
                             @endforeach
                             <div align="center">
-                                <input type="button" class="add-btn" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
+                                <input type="button" class="btn btn-success btn-sm" onclick="location.href='{{url('/button/study/'.$device->id)}}'" value="ボタンを追加">
                             </div>
                         </div>
                     </div>
@@ -70,6 +72,9 @@
                 <div id="collapse" class="collapse" role="tabpanel" aria-labelledby="heading" data-parent="#accordion2">
                     <div class="card-body">
                         @foreach($macros as $macro)
+                            <div style="text-align: center">
+                                {{$macro->name}}
+                            </div>
                             <div class="box0">
                                 <button type="submit" class="btn6" onclick="location.href='{{action('EditMacroController@index', ['id'=>$macro->id])}}'">
                                     <img src="{{ asset('img/edit_button.png') }}" class="btn3">
@@ -77,7 +82,7 @@
                                 <div class="name">
                                     <form method="POST" action="{{ action('apiController@runMacro', [1])}}">
                                         @csrf
-                                        <button type="submit" class="btn1">&nbsp&nbsp{{$macro->name}}</button>
+                                        <button type="submit" class="btn1" style="background: #5cb85c;border: solid #5cb85c">&nbsp</button>
                                     </form>
                                 </div>
                             </div>

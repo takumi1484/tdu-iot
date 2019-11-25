@@ -21,8 +21,8 @@
                         <input class="btn5" type="text" name="manufacturer" placeholder="メーカー名" maxlength="15" required><br>
                         <input class="btn5" type="text" name="product" placeholder="製品名(型番)" maxlength="20"><br>
                         <input class="btn5" type="text" name="device_name" placeholder="区分名" maxlength="15" required><br><br>
-                        <button type="submit"class="button">追加</button>
-                        <br><br><input type="button" class="button" value="戻る" onclick="location.href='{{url('/')}}'">
+                        <button type="submit"class="btn btn-success" style="width: 100px">追加</button>
+                        <br><br><input type="button" class="btn btn-success" value="戻る" style="width: 100px" onclick="location.href='{{url('/')}}'">
                     </form>
                 </div>
                 <div id="panel2" class="tab_panel">
@@ -32,14 +32,14 @@
                         <input class = "btn5" type="text" name="manufacturer" placeholder="メーカー名(必須)" maxlength="15" required><br>
                         <input class = "btn5" type="text" name="product" placeholder="製品名(型番)"><br>
                         <input class = "btn5" type="text" name="device_name" placeholder="区分名" maxlength="15"><br><br>
-                        <input type="submit" class="button" value="検索">
-                        <br><br><input type="button" class="button" value="戻る" onclick="location.href='{{url('/')}}'">
+                        <input type="submit" class="btn btn-success" value="検索" style="width: 100px">
+                        <br><br><input type="button" class="btn btn-success" value="戻る" style="width: 100px" onclick="location.href='{{url('/')}}'">
                     </form>
                 </div>
                 <div id="panel3" class="tab_panel">
                     <p>マクロを作成</p>
-                    <input type="submit" class="button" value="作成" onclick="location.href='{{url('macro')}}'">
-                    <br><br><input type="button" class="button" value="戻る" onclick="location.href='{{url('/')}}'">
+                    <input type="submit" class="btn btn-success" value="作成" style="width: 100px" onclick="location.href='{{url('macro')}}'">
+                    <br><br><input type="button" class="btn btn-success" value="戻る" style="width: 100px" onclick="location.href='{{url('/')}}'">
                 </div>
             </div>
         </div>

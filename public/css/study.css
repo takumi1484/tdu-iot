@@ -2,7 +2,7 @@
 .inp{
     text-align: center;
     font-size: 80%;
-    
+
 }
 .btn_name{
     border: 1px solid rgb(144, 207, 158);
@@ -13,10 +13,10 @@
     font-size: 13px;
     padding: 10px;
     height: 30px;
-    width: 270px;
+    width: 200px;
 }
 .kubun_name{
-    border: solid 1px #000; 
+    border: solid 1px #000;
 }
 .message{
     text-align:left;
@@ -27,9 +27,9 @@
     border-radius: 10%;
 }
 .button{
-    background-color: rgb(144, 207, 158);
+    background-color: #5cb85c;
     background-position: 10px;
-    border: 2px solid rgb(144, 207, 158);
+    border: 2px solid #5cb85c;
     border-radius: 5px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -42,4 +42,10 @@
     -moz-transition: 0.2s ease-in-out;
     -webkit-transition: 0.2s ease-in-out;
     height: 35px;
+}
+.color{
+    height: 30px;
+    border: 1px solid rgb(144, 207, 158);
+    position: relative;
+    top: 5px;
 }

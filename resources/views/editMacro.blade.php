@@ -2,22 +2,26 @@
 <link href="{{ asset('css/editmacro.css') }}" rel="stylesheet">
 @section('content')
     <div align="center">
-        <h3>ボタン一覧</h3>
+        <h5>ボタン一覧</h5>
         <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($devices as $device)
                 <div class="card">
-                    <div class="card-header" style="transform: rotate(0);" role="tab" id="heading{{$device->id}}">
-                        <h5 class="mb-0">
-                            <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="false" aria-controls="collapseOne">
-                                {{$device->name}}
-                            </a>
-                        </h5>
+                    <div class="card-header" style="transform: rotate(0);text-align: left" role="tab" id="heading{{$device->id}}">
+                        <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="false" aria-controls="collapseOne">
+                            {{$device->name}}
+                        </a>
                     </div>
                     <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
                         <div class="card-body">
-                            @foreach($device->button as $button)
-                                <button class="button2" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br>
-                            @endforeach
+                            <p style="font-size: x-small">ボタンをタップで追加</p>
+                            <table>
+                                @foreach($device->button as $button)
+                                    <tr>
+                                        <td style="text-align: right">{{$button->name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                        <td><button class="button2" style="background: {{$button->color}}; border: solid {{$button->color}};" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">&nbsp;</button></td>
+                                    </tr>
+                                @endforeach
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -25,9 +29,9 @@
         </div>
         <hr>
         <label>マクロ名：
-            <input id="macro_name" type="text" name="macro_name" value='{{$macro_name->name}}' required>
+            <input id="macro_name" type="text" name="macro_name" class="name" value='{{$macro_name->name}}' required>
         </label>
-        <h3>実行リスト</h3>
+        <h5>実行リスト</h5>
         <div id="order-list"></div>
         <br>
         <button class="btn btn-success" onclick="send()">更新</button><br><br>
@@ -36,7 +40,7 @@
             @method('delete')
             <input type="submit" class="btn btn-success" value="削除">
         </form>
-        <button type="button" class="btn btn-success">戻る</button>
+        <button type="button" class="btn btn-success" onclick="location.href='{{url('/')}}'">戻る</button>
     </div>
     <script type="text/javascript">
         let calls = [];//呼び出し順に配列に格納
@@ -94,7 +98,7 @@
         function updateElement() {
             let body = "";
             calls.forEach((items,index)=>{
-                body = body + "<div>"+(items.deviceName)+" : "+items.buttonName+"<button class=\"remove\" onclick='remove("+index+")'>-</button>"+"</div>";
+                body = body + "<table class='list'><tr><td style='text-align: right'>"+(items.deviceName)+"</td><td>"+" : "+items.buttonName+"</td><td><button class='btn btn-outline-secondary btn-sm' onclick='remove("+index+")' style='text-align: center'>取り除く</button></td>"+"</tr></table>";
             });
             document.getElementById('order-list').innerHTML = body;
         }

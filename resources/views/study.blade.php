@@ -5,8 +5,9 @@
 @section('content')
     <form name="set_name">
         <div class="inp">
-            <br><br><p>ボタン名を入力してください</p>
-            <input class="btn_name" type="text" name="button_name" placeholder="ボタン名" required maxlength="8" size="30vw" rows="1">
+            <br><br><p>ボタン名を入力し、色を選択してください</p>
+            <input class="btn_name" type="text" name="button_name" placeholder="ボタン名" required maxlength="8" rows="1">
+            <input type="color" name="color" class="color">
             <input type="hidden" name="device_id" value="{{$device_id}}">
             <br>
             <br>
@@ -17,7 +18,7 @@
             </p>
             <br><br>
             <div align="center">
-                <input id="study_start" type="button" value="学習開始" class="button" onclick="startStudy()">
+                <input id="study_start" type="button" value="学習開始" class="btn btn-success" onclick="startStudy()">
             </div>
         </div>
     </form>

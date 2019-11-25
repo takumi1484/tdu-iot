@@ -6,8 +6,8 @@
             @csrf
             <label class="lab">ボタンの変更</label>
             <p>新しい名前と色</p>
-            <input type="text" name="new_name" class="new_button_name" required>
-            <input type="color" name="new_color" class="color">
+            <input type="text" name="new_name" class="new_button_name" maxlength="8" value="{{$button_name}}" required>
+            <input type="color" name="new_color" class="color" value="{{$button_color}}">
             <br><br>
             <input type="submit" class="btn btn-success" value="決定"><br><br>
         </form>
