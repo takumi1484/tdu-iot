@@ -7,7 +7,7 @@
         <div class="inp">
             <br><br><p>ボタン名を入力し、色を選択してください</p>
             <input class="btn_name" type="text" name="button_name" placeholder="ボタン名" required maxlength="8" rows="1">
-            <input type="color" name="color" class="color">
+            <input type="color" name="color" class="color" value="#999a9a">
             <input type="hidden" name="device_id" value="{{$device_id}}">
             <br>
             <br>
