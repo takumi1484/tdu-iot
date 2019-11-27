@@ -33,12 +33,20 @@ class HomeController extends Controller
         User::find(Auth::id())->update([
             'studying'=>0
         ]);
+        /*$devices = Device::where('user_id',Auth::id())->get();
+        foreach($devices as $device){
+            $buttons = Button::where('device_id',$device->id);
+            foreach($buttons as $key => $value) {
+                $id[$key] = $value['sort_no'];
+            }
+            array_multisort($id, SORT_ASC, $buttons);
+            $device["buttons"] = $buttons;
+            array_push($sorted_device,$device);
+        }*/
         return view('home')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
-            'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
             'macros'=>Macro::where('user_id',Auth::id())->get(),
             'status'=>null
-            //不安
         ]);
     }
     public function study($id){//

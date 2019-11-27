@@ -61,8 +61,8 @@ Route::post('/searchData','ShareController@searchData');
 Route::post('/copyData','HomeController@copyDevice');
 
 
-Route::get('/send/{user_name}','apiController@getTemparature')->name('temprature');
-Route::get('/temp/{user_name}','apiController@updateTemparature');
+//Route::get('/send/{user_name}','apiController@getTemparature')->name('temprature');
+//Route::get('/temp/{user_name}','apiController@updateTemparature');
 
 
 //macro関連
@@ -81,8 +81,8 @@ Route::group(['prefix' => 'macro'], function () {//区分
 
 // 全ユーザ
 //Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
-    Route::get('/send/{user_name}','apiController@getCode');
-    Route::get('/temp/{user_name}','apiController@getTemparature')->name('temprature');
-    Route::get('/updatetemp/{user_name}','apiController@updateTemparature');
+Route::get('/send/{user_name}','apiController@getCode');
+Route::get('/temp/{user_name}','apiController@getTemparature')->name('temprature');
+Route::get('/updatetemp/{user_name}','apiController@updateTemparature');
 //});
 

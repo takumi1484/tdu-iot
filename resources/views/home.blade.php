@@ -36,7 +36,7 @@
                     </div>
                     <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
                         <div class="card-body">
-                            @foreach($device->button as $button)
+                            @foreach($device->button->sortBy('sort_no') as $button)
                                 <div style="text-align: center">
                                     {{$button->name}}
                                 </div>

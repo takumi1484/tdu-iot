@@ -53,6 +53,7 @@ class apiController extends Controller
         $button->device_id=$request->device_id;
         $button->ir_code=$request->ir_code;
         $button->color=$request->color;
+        $button->sort_no=Button::where('device_id',$device_id)->get()->count();
         $button->save();
     }
 
