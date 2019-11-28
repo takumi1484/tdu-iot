@@ -54,11 +54,28 @@
                             <br><br>
                             <input id="password-confirm" type="password" class="textlines" name="password_confirmation" required autocomplete="new-password" placeholder="パスワード(確認)">
                             <br><br>                            
-                            <a >所在地の選択</a>
-                            <br>                           
-                            <select id="ken" class="input" name="ken">
-                            </select>
 
+                            <a >所在地の選択</a>
+                            <br>  
+                            <a >県名</a>                         
+                            <select id="ken" class="input" name="ken" require>
+                                <option disabled selected value>選択してください</option>
+                            </select>
+                            @error('ken')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
+                            <br>
+                            <a >市区町村</a>
+                            <select id="siku" class="input" name="siku" require>
+                                <option disabled selected value>選択してください</option>
+                            </select>
+                            @error('siku')
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                            @enderror
                             <br><br>
                             <a>利用規約</a>
                             <br>

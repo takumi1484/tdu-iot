@@ -11,7 +11,7 @@
     },
     {
         "id": 1850144,
-        "name": "Tokyo-to",
+        "name": "Tōkyō-to",
         "Chinese_characters": "東京都",
         "country": "JP",
         "coord": {
@@ -21,7 +21,7 @@
     },
     {
         "id": 1862047,
-        "name": "Hyogo-ken",
+        "name": "Hyōgo-ken",
         "Chinese_characters": "兵庫県",
         "country": "JP",
         "coord": {
@@ -211,7 +211,7 @@
     },
     {
         "id": 1857907,
-        "name": "Kyoto-fu",
+        "name": "Kyōto-fu",
         "Chinese_characters": "京都府",
         "country": "JP",
         "coord": {
@@ -221,7 +221,7 @@
     },
     {
         "id": 1859133,
-        "name": "Kochi-ken",
+        "name": "Kōchi-ken",
         "Chinese_characters": "高知県",
         "country": "JP",
         "coord": {
@@ -401,7 +401,7 @@
     },
     {
         "id": 1854484,
-        "name": "Oita-ken",
+        "name": "Ōita-ken",
         "Chinese_characters": "大分県",
         "country": "JP",
         "coord": {
@@ -421,7 +421,7 @@
     },
     {
         "id": 1853904,
-        "name": "Osaka-fu",
+        "name": "Ōsaka-fu",
         "Chinese_characters": "大阪府",
         "country": "JP",
         "coord": {
@@ -447,6 +447,16 @@
         "coord": {
             "lon": 140.221985,
             "lat": 37.38158
+        }
+    },
+    {
+        "id": 2128147,
+        "name": "Shimo-furano",
+        "Chinese_characters": "北海道",
+        "country": "JP",
+        "coord": {
+          "lon": 142.383331,
+          "lat": 43.349998
         }
     },
     {
