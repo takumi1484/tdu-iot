@@ -28,7 +28,8 @@ class apiController extends Controller
     public function getTemparature(Request $request,$user_name){
 
         User::where('name',$user_name)->update([
-            'current_temperature'=>$request->input('temperature')
+            'current_temperature'=>$request->input('temperature'),
+            'timestamps' => false
         ]);
     }
     public function updateTemparature($user_name){
