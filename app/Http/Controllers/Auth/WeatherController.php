@@ -48,6 +48,7 @@ class WeatherController extends Controller
                     'wind_speed'=>$weather['wind']['speed'],
                     'pressure'=>$weather['main']['pressure'],
                     'updated_at' => now()]);
+            sleep(1);
         }
     }
 }
