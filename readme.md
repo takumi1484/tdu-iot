@@ -66,4 +66,5 @@ dbの書き換えを検知して画面遷移
 #2019/12/01
 `npm install aws-iot-device-sdk`で[AWS IoT SDK for JavaScript](https://github.com/aws/aws-iot-device-sdk-js)を追加。  
 jsでaws-iotのbrokerとやり取りするライブラリ  
-最低限利用できるコードは別リポジトリにpushする予定
+
+=><https://github.com/takumi1484/mqtt-test>
