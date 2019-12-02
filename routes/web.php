@@ -61,10 +61,6 @@ Route::post('/searchData','ShareController@searchData');
 Route::post('/copyData','HomeController@copyDevice');
 
 
-Route::get('/send/{user_name}','apiController@getTemparature')->name('temprature');
-Route::get('/temp/{user_name}','apiController@updateTemparature');
-
-
 //macro関連
 Route::group(['prefix' => 'macro'], function () {//区分
     Route::get('/','AddMacroController@index');
