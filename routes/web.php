@@ -71,9 +71,6 @@ Route::group(['prefix' => 'macro'], function () {//区分
     Route::get('/getData/{id}','EditMacroController@getData');
 });
 
-
-
-
 // 全ユーザ
 //Route::group(['middleware' => ['auth', 'can:user-higher']], function () {
     Route::get('/send/{user_name}','apiController@getCode');
