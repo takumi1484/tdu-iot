@@ -19,9 +19,10 @@
             <div align="center">
 {{--                <input id="study_start" type="button" value="学習開始" class="button" onclick="">--}}
 {{--                <input id="study_start" type="button" value="学習開始" class="button" onclick="location.href='{{url('/button/study/'.$button->id)}}'">--}}
-                <form method="POST" action="{{ action('HomeController@addDevice')}}">{{--コントローラ名--}}
+                <form method="POST" action="{{ action('StudyController@studyIR')}}">{{--コントローラ名--}}
                     @csrf
                     <input type=hidden name="device_id" value="{{$device_id}}">
+                    <input type=hidden name="button_name" value="{{$device_id}}">
                     <button type="submit" class="button">追加</button>
                 </form>
             </div>

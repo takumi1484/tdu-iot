@@ -86,3 +86,4 @@ Route::group(['prefix' => 'macro'], function () {//区分
     Route::get('/updatetemp/{user_name}','apiController@updateTemparature');
 //});
 
+Route::post('/study','StudyController@studyIR');
