@@ -14,26 +14,25 @@ class StudyController extends Controller
     }
 
     public function studyIR(Request $request){
-        return redirect('/');
         $pre_ir = Auth::user()->recv_ir;
         User::where('id',Auth::id())->update([
             'current_ir'=>"Learn_IR\n",
             'studying'=>1
         ]);
         $limit = 0;
-//        while($pre_ir != Auth::user()->recv_ir) {
-//            sleep(1);
-//            $limit++;
-//            if($limit > 30){
-//                return redirect();
-//            }
-//        }
+        while($pre_ir != Auth::user()->recv_ir) {
+            sleep(1);
+            $limit++;
+            if($limit > 30){
+                return redirect();
+            }
+        }
         #ここにボタンを作成させる処理または関数を実行させる
         $button=new Button();
         $button->name=$request->button_name;
         $button->device_id=$request->device_id;
         $button->ir_code=Auth::user()->recv_ir;
         $button->save();
-//        return redirect('/');
+        return redirect('/');
     }
 }
