@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<link href="{{ asset('css/editmacro.css') }}" rel="stylesheet">
+<link href="{{ asset('css/addmacro.css') }}" rel="stylesheet">
 @section('content')
     <div align="center">
         <h5>ボタン一覧</h5>
@@ -16,10 +16,7 @@
                             <p style="font-size: x-small">ボタンをタップで追加</p>
                             <table>
                                 @foreach($device->button as $button)
-                                    <tr>
-                                        <td style="text-align: right">{{$button->name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td><button class="button2" style="background: {{$button->color}}; border: solid {{$button->color}};" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">&nbsp;</button></td>
-                                    </tr>
+                                    <button class="button2" style="border: solid {{$button->color}};" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br><br>
                                 @endforeach
                             </table>
                         </div>

@@ -32,14 +32,11 @@
                 </button>
                 <div class="card">
                     <div class="card-header" style="transform: rotate(0);" role="tab" id="heading{{$device->id}}" data-target="target_{{$device->id}}">
-                        <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="true" aria-controls="collapseOne">{{$device->name}}</a>
+                        <a class="text-body collapsed stretched-link text-decoration-none" data-toggle="collapse" href="#collapse{{$device->id}}" role="button" aria-expanded="true" aria-controls="collapseOne" style="font-family: 'Meiryo UI'">{{$device->name}}</a>
                     </div>
                     <div id="collapse{{$device->id}}" class="collapse" role="tabpanel" aria-labelledby="heading{{$device->id}}" data-parent="#accordion">
                         <div class="card-body">
                             @foreach($device->button->sortBy('sort_no') as $button)
-                                <div style="text-align: center">
-                                    {{$button->name}}
-                                </div>
                                 <div class="box0">
                                     <button type="submit" class="btn6" onclick="location.href='{{url('button/edit/'.$button->id)}}'">
                                         <img src="{{ asset('img/edit_button.png') }}" class="btn3">
@@ -47,7 +44,7 @@
                                     <div class="name">
                                         <form method="POST"  action="{{ action('IRController@updateIR', ['id' => $button->id])}}">
                                             @csrf
-                                            <button type="submit" class="btn1" style="background: {{$button->color}};border: solid {{$button->color}};">&nbsp;</button>
+                                            <button type="submit" class="btn1" style="border: solid {{$button->color}}">{{$button->name}}</button>
                                         </form>
                                     </div>
                                 </div>
@@ -72,9 +69,6 @@
                 <div id="collapse" class="collapse" role="tabpanel" aria-labelledby="heading" data-parent="#accordion2">
                     <div class="card-body">
                         @foreach($macros as $macro)
-                            <div style="text-align: center">
-                                {{$macro->name}}
-                            </div>
                             <div class="box0">
                                 <button type="submit" class="btn6" onclick="location.href='{{action('EditMacroController@index', ['id'=>$macro->id])}}'">
                                     <img src="{{ asset('img/edit_button.png') }}" class="btn3">
@@ -82,7 +76,7 @@
                                 <div class="name">
                                     <form method="POST" action="{{ action('apiController@runMacro', [1])}}">
                                         @csrf
-                                        <button type="submit" class="btn1" style="background: #5cb85c;border: solid #5cb85c">&nbsp</button>
+                                        <button type="submit" class="btn1" style="border: solid #5cb85c">{{$macro->name}}</button>
                                     </form>
                                 </div>
                             </div>
