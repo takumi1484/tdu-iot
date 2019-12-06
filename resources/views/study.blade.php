@@ -3,7 +3,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('js/userpage1.js') }}" defer></script>
 @section('content')
-    <form name="set_name">
         <div class="inp">
             <br><br><p>ボタン名を入力してください</p>
             <input class="btn_name" type="text" name="button_name" placeholder="ボタン名" required maxlength="8" size="30vw" rows="1">
@@ -27,5 +26,4 @@
                 </form>
             </div>
         </div>
-    </form>
 @endsection
