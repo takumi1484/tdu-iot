@@ -43,7 +43,7 @@ Route::group(['prefix' => 'button'], function () {//button
 
 Route::post('/button/{id}','IRController@updateIR');
 
-Route::get('/study/start','apiController@startStudy');
+//Route::get('/study/start','apiController@startStudy');
 
 Route::get('/unregister',function (){ return view('unregister');});
 
