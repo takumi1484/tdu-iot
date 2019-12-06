@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="tdu-iot">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
     <root id="1">
       <ServerVersion>5.5.62</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -10,11 +10,9 @@
     <schema id="2" parent="1" name="heroku_e94bbb988414ef0">
       <Current>1</Current>
       <Collation>utf8_general_ci</Collation>
-      <Visible>1</Visible>
     </schema>
     <schema id="3" parent="1" name="information_schema">
       <Collation>utf8_general_ci</Collation>
-      <Substituted>1</Substituted>
     </schema>
     <collation id="4" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -804,192 +802,5 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="201" parent="2" name="buttons">
-      <Collation>utf8mb4_unicode_ci</Collation>
-    </table>
-    <table id="202" parent="2" name="devices">
-      <Collation>utf8mb4_unicode_ci</Collation>
-    </table>
-    <table id="203" parent="2" name="migrations">
-      <Collation>utf8mb4_unicode_ci</Collation>
-    </table>
-    <table id="204" parent="2" name="password_resets">
-      <Collation>utf8mb4_unicode_ci</Collation>
-    </table>
-    <table id="205" parent="2" name="users">
-      <Collation>utf8mb4_unicode_ci</Collation>
-    </table>
-    <column id="206" parent="201" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="207" parent="201" name="name">
-      <Position>2</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="208" parent="201" name="device_id">
-      <Position>3</Position>
-      <DataType>int(10) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="209" parent="201" name="ir_code">
-      <Position>4</Position>
-      <DataType>text|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="210" parent="201" name="created_at">
-      <Position>5</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="211" parent="201" name="updated_at">
-      <Position>6</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="212" parent="201" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="213" parent="202" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="214" parent="202" name="name">
-      <Position>2</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="215" parent="202" name="user_id">
-      <Position>3</Position>
-      <DataType>int(10) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="216" parent="202" name="created_at">
-      <Position>4</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="217" parent="202" name="updated_at">
-      <Position>5</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="218" parent="202" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="219" parent="203" name="id">
-      <Position>1</Position>
-      <DataType>int(10) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="220" parent="203" name="migration">
-      <Position>2</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="221" parent="203" name="batch">
-      <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="222" parent="203" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="223" parent="204" name="name">
-      <Position>1</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="224" parent="204" name="token">
-      <Position>2</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="225" parent="204" name="created_at">
-      <Position>3</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="226" parent="204" name="password_resets_name_index">
-      <ColNames>name</ColNames>
-      <Type>btree</Type>
-    </index>
-    <column id="227" parent="205" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0s</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="228" parent="205" name="name">
-      <Position>2</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="229" parent="205" name="password">
-      <Position>3</Position>
-      <DataType>varchar(191)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="230" parent="205" name="remember_token">
-      <Position>4</Position>
-      <DataType>varchar(100)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="231" parent="205" name="created_at">
-      <Position>5</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="232" parent="205" name="updated_at">
-      <Position>6</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="233" parent="205" name="deleted_at">
-      <Position>7</Position>
-      <DataType>timestamp|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="234" parent="205" name="users_name_unique">
-      <ColNames>name</ColNames>
-      <Unique>1</Unique>
-      <Type>btree</Type>
-    </index>
-    <key id="235" parent="205" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <key id="236" parent="205" name="users_name_unique">
-      <ColNames>name</ColNames>
-      <UnderlyingIndexName>users_name_unique</UnderlyingIndexName>
-    </key>
   </database-model>
 </dataSource>
