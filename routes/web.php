@@ -43,7 +43,7 @@ Route::group(['prefix' => 'button'], function () {//button
 
 Route::post('/button/{id}','IRController@updateIR');
 
-Route::get('/study/start','apiController@startStudy');
+//Route::get('/study/start','apiController@startStudy');
 
 Route::get('/unregister',function (){ return view('unregister');});
 
@@ -86,3 +86,4 @@ Route::group(['prefix' => 'macro'], function () {//区分
     Route::get('/updatetemp/{user_name}','apiController@updateTemparature');
 //});
 
+Route::post('/study','StudyController@studyIR');

@@ -21,7 +21,7 @@ class apiController extends Controller
                 return \App::abort(404);
         }
         User::where('name',$user_name)->update([
-                'current_ir'=>"Send_IR\n".$request->input('code'),
+                'recv_ir'=>"Send_IR\n".$request->input('code'),
                 'studying'=>0
         ]);
     }
