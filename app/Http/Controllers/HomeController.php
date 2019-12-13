@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Device;
 use App\Button;
+use App\Weather;
 use Illuminate\Support\Facades\Facade;
 
 class HomeController extends Controller
@@ -33,10 +34,24 @@ class HomeController extends Controller
         User::find(Auth::id())->update([
             'studying'=>0
         ]);
+        $place=User::where('id',Auth::id())->value('place');
         return view('home')->with([
             'devices'=>Device::where('user_id',Auth::id())->get(),
             'buttons'=>Button::where('device_id',Device::where('user_id',Auth::id())->get()),
             'macros'=>Macro::where('user_id',Auth::id())->get(),
+            //ここから天気関係
+                'current_temperature'=>User::where('id',Auth::id())->value('current_temperature'),
+                'place'=>$place,
+                'weather'=>Weather::where('place','like',$place)->value('weather'),
+                'weather_description'=>Weather::where('place','like',$place)->value('weather_description'),
+                'weather_icon'=>Weather::where('place','like',$place)->value('weather_icon'),
+                'temp'=>Weather::where('place','like',$place)->value('temp'),
+                'temp_max'=>Weather::where('place','like',$place)->value('temp_max'),
+                'temp_min'=>Weather::where('place','like',$place)->value('temp_min'),
+                'humidity'=>Weather::where('place','like',$place)->value('humidity'),
+                'wind_speed'=>Weather::where('place','like',$place)->value('wind_speed'),
+                'pressure'=>Weather::where('place','like',$place)->value('pressure'),
+            //天気関係ここまで
             'status'=>null
             //不安
         ]);
