@@ -16,10 +16,7 @@
                             <p style="font-size: x-small">ボタンをタップで追加</p>
                             <table>
                                 @foreach($device->button as $button)
-                                    <tr>
-                                        <td style="text-align: right">{{$button->name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                                        <td><button class="button2" style="background: {{$button->color}}; border: solid {{$button->color}};" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">&nbsp;</button></td>
-                                    </tr>
+                                    <button class="button2" style="border: solid {{$button->color}};" onclick="add('{{$button->id}}','{{$button->name}}','{{$device->name}}')">{{$button->name}}</button><br><br>
                                 @endforeach
                             </table>
                         </div>
@@ -51,7 +48,7 @@
         function updateElement() {
             let body = "";
             calls.forEach((items,index)=>{
-                body = body + "<table class='list'><tr><td style='text-align: right'>"+(items.deviceName)+"</td><td>"+" : "+items.buttonName+"</td><td><button class='btn btn-outline-secondary btn-sm' onclick='remove("+index+")' style='text-align: center'>取り除く</button></td>"+"</tr></table>";
+                body = body + "<table class='list'><tr><td style='text-align: right;width: 106px;'>"+(items.deviceName)+"</td><td style='width: 10px; text-align: center;'>:</td><td style='width: 106px'>"+items.buttonName+"</td><td style='width: 98px;text-align: center;'><button class='btn btn-outline-secondary btn-sm' onclick='remove("+index+")' style='text-align: center;'>取り除く</button></td>"+"</tr></table>";
                 // console.log(calls);
             });
             document.getElementById('order-list').innerHTML = body;

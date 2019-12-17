@@ -95,7 +95,7 @@
         function updateElement() {
             let body = "";
             calls.forEach((items,index)=>{
-                body = body + "<table class='list'><tr><td style='text-align: right'>"+(items.deviceName)+"</td><td>"+" : "+items.buttonName+"</td><td><button class='btn btn-outline-secondary btn-sm' onclick='remove("+index+")' style='text-align: center'>取り除く</button></td>"+"</tr></table>";
+                body = body + "<table class='list'><tr><td style='text-align: right;width: 106px;'>"+(items.deviceName)+"</td><td style='width: 10px; text-align: center;'>:</td><td style='width: 106px'>"+items.buttonName+"</td><td style='width: 98px;text-align: center;'><button class='btn btn-outline-secondary btn-sm' onclick='remove("+index+")' style='text-align: center;'>取り除く</button></td>"+"</tr></table>";
             });
             document.getElementById('order-list').innerHTML = body;
         }
